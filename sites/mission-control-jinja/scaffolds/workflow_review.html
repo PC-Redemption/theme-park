@@ -1,0 +1,34 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/badges.html" import badge %}
+{% from "components/cards.html" import contract_card, status_card %}
+{% from "scaffolds/_helpers.html" import scaffold_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This workflow scaffold is placeholder-safe starter content with no real approval actions connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+
+  <section class="tp-section-stack" aria-labelledby="workflow-review-title">
+    <div class="tp-content-head">
+      <div>
+        <p class="tp-kicker">Starter scaffold</p>
+        <h2 id="workflow-review-title">Workflow Review</h2>
+      </div>
+      {{ badge("confirmed actions required", "warning") }}
+    </div>
+
+    {{ scaffold_conventions(contract) }}
+
+    <div class="tp-card-grid">
+      {{ status_card("Current Step", "Placeholder", "info") }}
+      {{ status_card("Blocking State", "None", "success") }}
+      {{ status_card("Action Safety", "Server required", "warning") }}
+    </div>
+
+    <div class="tp-card-grid">
+      {{ contract_card("1. Prepare", "Show prerequisites, operator context, and readiness checks.", "Step") }}
+      {{ contract_card("2. Execute", "Show one safe current step with confirmed action results.", "Step") }}
+      {{ contract_card("3. Review", "Show completion evidence, notes, and handoff state.", "Step") }}
+    </div>
+  </section>
+{% endblock %}

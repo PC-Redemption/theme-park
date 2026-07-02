@@ -1,0 +1,14 @@
+{
+  "app_title": "Review Studio Jinja Demo",
+  "root_redirect": "/queue",
+  "sidebar_title": "Review Navigation",
+  "footer_items": [
+    "Starter: review-studio-jinja",
+    "Runtime: FastAPI + Jinja"
+  ],
+  "badge_labels": [
+    { "label": "Jinja", "tone": "neutral" },
+    { "label": "Review", "tone": "warning" }
+  ],
+  "page_titles": {}
+}

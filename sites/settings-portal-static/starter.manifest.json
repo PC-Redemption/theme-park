@@ -11,8 +11,8 @@
     "plain HTML delivery"
   ],
   "preview": {
-    "script": "scripts/preview-settings-static.sh",
-    "url": "http://127.0.0.1:8000/sites/settings-portal-static/templates/index.html"
+    "script": "scripts/preview-starter.sh settings-portal-static",
+    "path": "/sites/settings-portal-static/templates/index.html"
   },
   "paths": {
     "site_dir": "sites/settings-portal-static",

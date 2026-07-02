@@ -1,0 +1,22 @@
+{
+  "key": "mission-control-static",
+  "name": "Mission Control Static",
+  "family": "mission-control",
+  "runtime": "static",
+  "summary": "Starter family for operational control rooms, active workstreams, and coordination dashboards.",
+  "strengths": [
+    "plain HTML delivery",
+    "documentation previews",
+    "starter demos",
+    "simple shell walkthroughs"
+  ],
+  "preview": {
+    "script": "scripts/preview-starter.sh mission-control-static",
+    "path": "/sites/mission-control-static/templates/index.html"
+  },
+  "paths": {
+    "site_dir": "sites/mission-control-static",
+    "config": "sites/mission-control-static/app_config",
+    "routes": "sites/mission-control-static/routes"
+  }
+}

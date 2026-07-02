@@ -1,0 +1,24 @@
+{
+  "key": "mission-control-jinja",
+  "name": "Mission Control Jinja",
+  "family": "mission-control",
+  "runtime": "jinja",
+  "summary": "Starter family for operational control rooms, active workstreams, and coordination dashboards.",
+  "strengths": [
+    "dashboards",
+    "list-detail workspaces",
+    "workflow review",
+    "monitoring",
+    "reference browsing",
+    "results pages"
+  ],
+  "preview": {
+    "script": "scripts/preview-starter.sh mission-control-jinja",
+    "path": "/dashboard"
+  },
+  "paths": {
+    "site_dir": "sites/mission-control-jinja",
+    "config": "sites/mission-control-jinja/app_config",
+    "routes": "sites/mission-control-jinja/routes"
+  }
+}

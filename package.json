@@ -1,0 +1,13 @@
+{
+  "name": "theme-park",
+  "private": true,
+  "description": "Starter-site control plane and reusable shell catalog",
+  "scripts": {
+    "catalog:build": "python3 scripts/theme-park.py build-static && python3 scripts/theme-park.py build-catalog",
+    "catalog:shots": "node scripts/capture-previews.mjs",
+    "catalog:refresh": "npm run catalog:build && npm run catalog:shots && python3 scripts/theme-park.py build-catalog"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}

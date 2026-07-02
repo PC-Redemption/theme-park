@@ -1,0 +1,111 @@
+{
+  "pages": [
+    {
+      "key": "dashboard",
+      "label": "Dashboard",
+      "file": "dashboard.html",
+      "kicker": "Static starter",
+      "title": "Operations Dashboard",
+      "subtitle": "Plain HTML starter for summary-first dashboard layouts.",
+      "badges": ["Static"],
+      "card_title": "Overview scaffold",
+      "card_body": "Summary-first layout for at-a-glance state and next actions.",
+      "sections": [
+        {
+          "type": "status_cards",
+          "items": [
+            { "label": "Overall State", "value": "Demo only", "tone": "info" },
+            { "label": "Attention Needed", "value": "0 sample items", "tone": "warning" },
+            { "label": "Latest Update", "value": "Placeholder", "tone": "success" }
+          ]
+        },
+        {
+          "type": "card_grid",
+          "items": [
+            { "eyebrow": "Primary Summary", "title": "High-level state", "body": "Use for next actions and critical context." },
+            { "eyebrow": "Activity Snapshot", "title": "Recent changes", "body": "Use for queued work and aging indicators." }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "records",
+      "label": "Records",
+      "file": "records.html",
+      "kicker": "Static starter",
+      "title": "Records Workspace",
+      "subtitle": "Plain HTML starter for list-detail and browsing flows.",
+      "badges": ["List/detail"],
+      "card_title": "List/detail scaffold",
+      "card_body": "Browse-select-inspect flow for collections and workbenches.",
+      "sections": [
+        { "type": "filter_bar", "items": ["Search placeholder", "Filter placeholder", "Sort placeholder"] },
+        {
+          "type": "card_grid",
+          "items": [
+            { "eyebrow": "Collection", "title": "No records connected", "body": "Use this panel for a browsable collection list." },
+            { "eyebrow": "Drawer", "title": "Selected Record", "body": "Use for context before edits move into actions or modals." }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "review",
+      "label": "Review",
+      "file": "review.html",
+      "kicker": "Static starter",
+      "title": "Workflow Review",
+      "subtitle": "Plain HTML starter for guided review and approval flows.",
+      "badges": ["Review flow"],
+      "card_title": "Workflow scaffold",
+      "card_body": "Guided review and confirmation layout for step-based flows.",
+      "sections": [
+        {
+          "type": "status_cards",
+          "items": [
+            { "label": "Current Step", "value": "Placeholder", "tone": "info" },
+            { "label": "Blocking State", "value": "None", "tone": "success" },
+            { "label": "Action Safety", "value": "Confirm first", "tone": "warning" }
+          ]
+        },
+        {
+          "type": "card_grid",
+          "items": [
+            { "eyebrow": "Step 1", "title": "Prepare", "body": "Readiness, context, and prerequisites." },
+            { "eyebrow": "Step 2", "title": "Execute", "body": "Current step and evidence capture." },
+            { "eyebrow": "Step 3", "title": "Review", "body": "Approval, notes, and handoff." }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "settings",
+      "label": "Settings",
+      "file": "settings.html",
+      "kicker": "Static starter",
+      "title": "Settings Workspace",
+      "subtitle": "Plain HTML starter for configuration and review-before-save flows.",
+      "badges": ["Validation required"],
+      "card_title": "Settings scaffold",
+      "card_body": "Configuration and review-before-save workspace.",
+      "sections": [
+        {
+          "type": "form",
+          "title": "Settings form",
+          "fields": [
+            { "label": "Brand name", "type": "text", "value": "Operations Shell Static" },
+            { "label": "Default route", "type": "select", "options": ["Dashboard", "Records", "Review"] }
+          ]
+        },
+        {
+          "type": "card_grid",
+          "items": [
+            { "eyebrow": "Form region", "title": "Defaults and validation", "body": "Use for grouped fields and clear error handling." },
+            { "eyebrow": "Review state", "title": "Pending changes", "body": "Use for before-and-after confirmation." },
+            { "eyebrow": "Recovery", "title": "Rollback hint", "body": "Explain cancel and restore paths." }
+          ]
+        }
+      ]
+    }
+  ]
+}

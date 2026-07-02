@@ -1,0 +1,34 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/badges.html" import badge %}
+{% from "components/cards.html" import contract_card, status_card %}
+{% from "scaffolds/_helpers.html" import scaffold_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This dashboard is placeholder-safe starter content with no connected production data.", "warning") }}
+  {{ reference_links(reference_set) }}
+
+  <section class="tp-section-stack" aria-labelledby="dashboard-overview-title">
+    <div class="tp-content-head">
+      <div>
+        <p class="tp-kicker">Starter scaffold</p>
+        <h2 id="dashboard-overview-title">Dashboard Overview</h2>
+      </div>
+      {{ badge("placeholder data", "warning") }}
+    </div>
+
+    {{ scaffold_conventions(contract) }}
+
+    <div class="tp-card-grid">
+      {{ status_card("Overall State", "Demo only", "info") }}
+      {{ status_card("Attention Needed", "0 sample items", "warning") }}
+      {{ status_card("Latest Update", "Placeholder", "success") }}
+    </div>
+
+    <div class="tp-card-grid">
+      {{ contract_card("Primary Summary", "Use for high-level operational state and next best actions.", "Region") }}
+      {{ contract_card("Activity Snapshot", "Use for recent events, aging indicators, or queued work summaries.", "Region") }}
+      {{ contract_card("Status Breakdown", "Use for grouped counts, not long raw tables.", "Region") }}
+    </div>
+  </section>
+{% endblock %}

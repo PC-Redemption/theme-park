@@ -1,0 +1,152 @@
+{
+  "dashboard_overview": {
+    "contract": {
+      "title": "Dashboard Overview",
+      "summary": "Shared starter rules for at-a-glance dashboards and next-best-action surfaces.",
+      "statuses": [
+        { "label": "Ready", "description": "Starter-safe ready state", "tone": "info" },
+        { "label": "Warning", "description": "Starter-safe warning state", "tone": "warning" }
+      ],
+      "content_frame": "Use a summary-first page frame with a small number of dense status regions.",
+      "data_view": "Prefer compact grouped summaries before large raw tables.",
+      "form_action": "Keep primary actions visible and low-risk from the landing view."
+    },
+    "reference_set": {
+      "title": "Dashboard Pattern References",
+      "summary": "Example sources this scaffold can grow into without coupling to a private product.",
+      "links": [
+        { "label": "Operations summary", "summary": "Primary state, blockers, and next actions." },
+        { "label": "Activity snapshot", "summary": "Recent events and aging indicators." },
+        { "label": "Status breakdown", "summary": "Grouped counts and fast scanning." }
+      ]
+    }
+  },
+  "list_detail": {
+    "contract": {
+      "title": "List Detail Workspace",
+      "summary": "Shared starter rules for browse-select-inspect flows.",
+      "statuses": [
+        { "label": "Selected", "description": "A record is selected", "tone": "info" },
+        { "label": "Pending", "description": "Follow-up work exists", "tone": "warning" }
+      ],
+      "content_frame": "Keep the collection visible while a detail drawer or side panel stays in context.",
+      "data_view": "Support search, filtering, and sorting without hiding the selected state.",
+      "form_action": "Move edits into drawers, forms, or modal actions instead of inline list churn."
+    },
+    "reference_set": {
+      "title": "List Detail References",
+      "summary": "Pattern hints for record browsers and workbenches.",
+      "links": [
+        { "label": "Navigator", "summary": "Left-side record browsing." },
+        { "label": "Workbench", "summary": "Context-rich detail area." }
+      ]
+    }
+  },
+  "workflow_review": {
+    "contract": {
+      "title": "Workflow Review",
+      "summary": "Shared starter rules for guided review and approval sequences.",
+      "statuses": [
+        { "label": "In Progress", "description": "Work has started", "tone": "info" },
+        { "label": "Approval Needed", "description": "Human confirmation is required", "tone": "warning" }
+      ],
+      "content_frame": "Show one current step clearly while preserving stage awareness.",
+      "data_view": "Attach evidence and notes near the active step instead of scattering them.",
+      "form_action": "Require explicit confirmation states for consequential actions."
+    },
+    "reference_set": {
+      "title": "Workflow References",
+      "summary": "Pattern hints for checklists, gates, and review flows.",
+      "links": [
+        { "label": "Prepare", "summary": "Readiness and prerequisites." },
+        { "label": "Execute", "summary": "Current safe step and evidence capture." },
+        { "label": "Review", "summary": "Approval, notes, and handoff." }
+      ]
+    }
+  },
+  "live_monitor": {
+    "contract": {
+      "title": "Live Monitor",
+      "summary": "Shared starter rules for live data, freshness, and safe degraded states.",
+      "statuses": [
+        { "label": "Connected", "description": "Live path is healthy", "tone": "info" },
+        { "label": "Stale", "description": "Data freshness is degraded", "tone": "warning" }
+      ],
+      "content_frame": "Keep current state, trend context, and degraded-state messaging visible together.",
+      "data_view": "Attach freshness and timestamp context directly to live values.",
+      "form_action": "Disable unsafe controls unless the starter confirms a valid live state."
+    },
+    "reference_set": {
+      "title": "Live Monitor References",
+      "summary": "Pattern hints for live status and monitored environments.",
+      "links": [
+        { "label": "Trend panel", "summary": "Recent behavior and bounded charts." },
+        { "label": "Current readings", "summary": "Compact latest values and freshness markers." }
+      ]
+    }
+  },
+  "reference_library": {
+    "contract": {
+      "title": "Reference Library",
+      "summary": "Shared starter rules for searchable references, controlled docs, and supporting materials.",
+      "statuses": [
+        { "label": "Indexed", "description": "Reference is available", "tone": "info" },
+        { "label": "Review Needed", "description": "Revision or validation work exists", "tone": "warning" }
+      ],
+      "content_frame": "Keep the search list and selected preview in one stable browsing context.",
+      "data_view": "Include revision, source, and document-state metadata directly in results.",
+      "form_action": "Favor read-first flows with explicit actions for review, replace, or archive."
+    },
+    "reference_set": {
+      "title": "Reference Library References",
+      "summary": "Pattern hints for knowledge and document surfaces.",
+      "links": [
+        { "label": "Search", "summary": "Fast filtering and retrieval." },
+        { "label": "Preview", "summary": "Current excerpt, revision, and source context." }
+      ]
+    }
+  },
+  "results_report": {
+    "contract": {
+      "title": "Results Report",
+      "summary": "Shared starter rules for summary, evidence, and export-oriented result pages.",
+      "statuses": [
+        { "label": "Ready", "description": "Report can be reviewed", "tone": "info" },
+        { "label": "Export Pending", "description": "A downstream export is still required", "tone": "warning" }
+      ],
+      "content_frame": "Present summary findings first, then evidence and exportable detail.",
+      "data_view": "Keep source context and timestamps attached to result rows.",
+      "form_action": "Require explicit review states before exporting or publishing a result."
+    },
+    "reference_set": {
+      "title": "Results References",
+      "summary": "Pattern hints for summary and evidence pages.",
+      "links": [
+        { "label": "Summary", "summary": "Outcome, scope, and timing." },
+        { "label": "Evidence", "summary": "Operator notes and supporting rows." }
+      ]
+    }
+  },
+  "settings_workspace": {
+    "contract": {
+      "title": "Settings Workspace",
+      "summary": "Shared starter rules for settings, defaults, and review-before-save pages.",
+      "statuses": [
+        { "label": "Draft", "description": "Unsaved changes are present", "tone": "info" },
+        { "label": "Validation", "description": "Checks are required before save", "tone": "warning" }
+      ],
+      "content_frame": "Group related inputs into clear sections with visible review state.",
+      "data_view": "Expose defaults and change previews close to the form.",
+      "form_action": "Prefer explicit review and rollback hints before confirmed save."
+    },
+    "reference_set": {
+      "title": "Settings References",
+      "summary": "Pattern hints for admin and configuration surfaces.",
+      "links": [
+        { "label": "Form region", "summary": "Defaults, validation, and field groups." },
+        { "label": "Review state", "summary": "Pending changes and safety checks." },
+        { "label": "Recovery", "summary": "Cancel and rollback expectations." }
+      ]
+    }
+  }
+}

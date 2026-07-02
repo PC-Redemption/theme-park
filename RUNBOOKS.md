@@ -157,6 +157,46 @@ Checks:
 - do not collapse multiple starters into one mixed folder
 - prefer shared abstractions over copy-paste, but not at the cost of clarity
 
+## Runbook 7A: Copy A Starter
+
+Use when:
+
+- a current starter is close to what you need and you want a new site-local variant quickly
+
+Steps:
+
+1. pick the nearest source starter from the control plane
+2. run `python3 scripts/theme-park.py starter-copy --source SOURCE_KEY --dest NEW_KEY`
+3. pass `--name`, `--summary`, or `--family` if the default carry-over is too generic
+4. preview the new starter with `scripts/preview-starter.sh NEW_KEY`
+5. refresh the catalog with `python3 scripts/theme-park.py build-catalog`
+
+Checks:
+
+- verify the copied starter manifest points at the new site directory
+- verify branding and summary files were rewritten
+- keep the starter in its own site directory under `sites/`
+
+## Runbook 7B: Create A Starter Family
+
+Use when:
+
+- you want both static and Jinja variants for a new family without hand-copying two site trees
+
+Steps:
+
+1. choose the closest seed family such as `operations`, `settings`, or `review`
+2. run `python3 scripts/theme-park.py family-create --seed-family operations --family NEW_FAMILY --site-slug NEW_SITE`
+3. add `--display-name` and `--summary` so the generated family reads well in the catalog
+4. preview both generated starters with `scripts/preview-starter.sh`
+5. capture live screenshots with `node scripts/capture-previews.mjs --starter NEW_KEY`
+
+Checks:
+
+- both runtime variants should appear under `sites/`
+- static preview paths should point at the generated site, not the seed site
+- rebuild the catalog after generation so the control plane reflects the new family
+
 ## Runbook 8: Sanitize For Public Release
 
 Use when:
@@ -176,6 +216,26 @@ Checks:
 - no internal hostnames remain unless intentionally documented as historical source references
 - no private credentials, identifiers, or routes remain
 - examples are safe to publish and understand
+
+## Runbook 8A: Refresh The Control Plane
+
+Use when:
+
+- starter metadata, screenshots, or generated static pages have changed
+
+Steps:
+
+1. run `python3 scripts/theme-park.py build-static`
+2. run `python3 scripts/theme-park.py build-catalog`
+3. run `node scripts/capture-previews.mjs` for fresh live renders
+4. rerun `python3 scripts/theme-park.py build-catalog` so image references are current
+5. preview the launcher with `scripts/preview-catalog.sh`
+
+Checks:
+
+- every starter card should show a live screenshot or an explicit pending state
+- workflow builders should reflect currently available families and starters
+- starter counts in the launcher should match `catalog/starters.json`
 
 ## Runbook 9: Accept A Starter Extraction
 

@@ -1,21 +1,159 @@
 {
   "generated_from": "sites/*/starter.manifest.json",
-  "starter_count": 6,
+  "starter_count": 8,
   "families": {
-    "operations": [
-      "operations-shell-jinja",
-      "operations-shell-static"
-    ],
-    "review": [
-      "review-studio-jinja",
-      "review-studio-static"
-    ],
-    "settings": [
-      "settings-portal-jinja",
-      "settings-portal-static"
-    ]
+    "mission-control": {
+      "label": "Mission Control",
+      "accent": "#17617f",
+      "starters": [
+        "mission-control-jinja",
+        "mission-control-static"
+      ],
+      "runtimes": [
+        "jinja",
+        "static"
+      ],
+      "strengths": [
+        "dashboards",
+        "documentation previews",
+        "list-detail workspaces",
+        "monitoring",
+        "plain HTML delivery",
+        "simple shell walkthroughs",
+        "starter demos",
+        "workflow review"
+      ]
+    },
+    "operations": {
+      "label": "Operations",
+      "accent": "#17617f",
+      "starters": [
+        "operations-shell-jinja",
+        "operations-shell-static"
+      ],
+      "runtimes": [
+        "jinja",
+        "static"
+      ],
+      "strengths": [
+        "dashboards",
+        "documentation previews",
+        "list-detail workspaces",
+        "monitoring",
+        "plain HTML delivery",
+        "simple shell walkthroughs",
+        "starter demos",
+        "workflow review"
+      ]
+    },
+    "review": {
+      "label": "Review",
+      "accent": "#6652a6",
+      "starters": [
+        "review-studio-jinja",
+        "review-studio-static"
+      ],
+      "runtimes": [
+        "jinja",
+        "static"
+      ],
+      "strengths": [
+        "approval boards",
+        "evidence bundles",
+        "release summaries",
+        "review queues"
+      ]
+    },
+    "settings": {
+      "label": "Settings",
+      "accent": "#2f7b47",
+      "starters": [
+        "settings-portal-jinja",
+        "settings-portal-static"
+      ],
+      "runtimes": [
+        "jinja",
+        "static"
+      ],
+      "strengths": [
+        "admin portal demos",
+        "audit-friendly tables",
+        "configuration pages",
+        "event audit",
+        "global preferences",
+        "health review",
+        "plain HTML delivery",
+        "user administration"
+      ]
+    }
+  },
+  "workflows": {
+    "preview": "scripts/preview-starter.sh STARTER_KEY",
+    "copy": "python3 scripts/theme-park.py starter-copy --source STARTER_KEY --dest NEW_KEY",
+    "family_create": "python3 scripts/theme-park.py family-create --seed-family operations --family NEW_FAMILY --site-slug NEW_SITE",
+    "screenshots": "node scripts/capture-previews.mjs"
   },
   "starters": [
+    {
+      "key": "mission-control-jinja",
+      "name": "Mission Control Jinja",
+      "family": "mission-control",
+      "runtime": "jinja",
+      "summary": "Starter family for operational control rooms, active workstreams, and coordination dashboards.",
+      "strengths": [
+        "dashboards",
+        "list-detail workspaces",
+        "workflow review",
+        "monitoring",
+        "reference browsing",
+        "results pages"
+      ],
+      "preview": {
+        "script": "scripts/preview-starter.sh mission-control-jinja",
+        "path": "/dashboard",
+        "url": "http://127.0.0.1:8000/dashboard",
+        "image": "./previews/mission-control-jinja.png"
+      },
+      "paths": {
+        "site_dir": "sites/mission-control-jinja",
+        "config": "sites/mission-control-jinja/app_config",
+        "routes": "sites/mission-control-jinja/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh mission-control-jinja",
+        "copy": "python3 scripts/theme-park.py starter-copy --source mission-control-jinja --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter mission-control-jinja"
+      }
+    },
+    {
+      "key": "mission-control-static",
+      "name": "Mission Control Static",
+      "family": "mission-control",
+      "runtime": "static",
+      "summary": "Starter family for operational control rooms, active workstreams, and coordination dashboards.",
+      "strengths": [
+        "plain HTML delivery",
+        "documentation previews",
+        "starter demos",
+        "simple shell walkthroughs"
+      ],
+      "preview": {
+        "script": "scripts/preview-starter.sh mission-control-static",
+        "path": "/sites/mission-control-static/templates/index.html",
+        "url": "http://127.0.0.1:8000/sites/mission-control-static/templates/index.html",
+        "image": "./previews/mission-control-static.png"
+      },
+      "paths": {
+        "site_dir": "sites/mission-control-static",
+        "config": "sites/mission-control-static/app_config",
+        "routes": "sites/mission-control-static/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh mission-control-static",
+        "copy": "python3 scripts/theme-park.py starter-copy --source mission-control-static --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter mission-control-static"
+      }
+    },
     {
       "key": "operations-shell-jinja",
       "name": "Operations Shell Jinja",
@@ -31,14 +169,20 @@
         "results pages"
       ],
       "preview": {
-        "script": "scripts/preview-jinja.sh",
+        "script": "scripts/preview-starter.sh operations-shell-jinja",
+        "path": "/dashboard",
         "url": "http://127.0.0.1:8000/dashboard",
-        "image": "./previews/operations-shell-jinja.svg"
+        "image": "./previews/operations-shell-jinja.png"
       },
       "paths": {
         "site_dir": "sites/operations-shell-jinja",
         "config": "sites/operations-shell-jinja/app_config",
         "routes": "sites/operations-shell-jinja/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh operations-shell-jinja",
+        "copy": "python3 scripts/theme-park.py starter-copy --source operations-shell-jinja --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter operations-shell-jinja"
       }
     },
     {
@@ -54,14 +198,20 @@
         "simple shell walkthroughs"
       ],
       "preview": {
-        "script": "scripts/preview-static.sh",
+        "script": "scripts/preview-starter.sh operations-shell-static",
+        "path": "/sites/operations-shell-static/templates/index.html",
         "url": "http://127.0.0.1:8000/sites/operations-shell-static/templates/index.html",
-        "image": "./previews/operations-shell-static.svg"
+        "image": "./previews/operations-shell-static.png"
       },
       "paths": {
         "site_dir": "sites/operations-shell-static",
         "config": "sites/operations-shell-static/app_config",
         "routes": "sites/operations-shell-static/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh operations-shell-static",
+        "copy": "python3 scripts/theme-park.py starter-copy --source operations-shell-static --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter operations-shell-static"
       }
     },
     {
@@ -77,14 +227,20 @@
         "release summaries"
       ],
       "preview": {
-        "script": "STARTER=review-studio-jinja scripts/preview-jinja.sh",
+        "script": "scripts/preview-starter.sh review-studio-jinja",
+        "path": "/queue",
         "url": "http://127.0.0.1:8000/queue",
-        "image": "./previews/review-studio-jinja.svg"
+        "image": "./previews/review-studio-jinja.png"
       },
       "paths": {
         "site_dir": "sites/review-studio-jinja",
         "config": "sites/review-studio-jinja/app_config",
         "routes": "sites/review-studio-jinja/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh review-studio-jinja",
+        "copy": "python3 scripts/theme-park.py starter-copy --source review-studio-jinja --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter review-studio-jinja"
       }
     },
     {
@@ -100,14 +256,20 @@
         "release summaries"
       ],
       "preview": {
-        "script": "STARTER=review-studio-static scripts/preview-static.sh",
+        "script": "scripts/preview-starter.sh review-studio-static",
+        "path": "/sites/review-studio-static/templates/index.html",
         "url": "http://127.0.0.1:8000/sites/review-studio-static/templates/index.html",
-        "image": "./previews/review-studio-static.svg"
+        "image": "./previews/review-studio-static.png"
       },
       "paths": {
         "site_dir": "sites/review-studio-static",
         "config": "sites/review-studio-static/app_config",
         "routes": "sites/review-studio-static/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh review-studio-static",
+        "copy": "python3 scripts/theme-park.py starter-copy --source review-studio-static --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter review-studio-static"
       }
     },
     {
@@ -124,14 +286,20 @@
         "table-heavy admin pages"
       ],
       "preview": {
-        "script": "scripts/preview-settings-jinja.sh",
+        "script": "scripts/preview-starter.sh settings-portal-jinja",
+        "path": "/health",
         "url": "http://127.0.0.1:8000/health",
-        "image": "./previews/settings-portal-jinja.svg"
+        "image": "./previews/settings-portal-jinja.png"
       },
       "paths": {
         "site_dir": "sites/settings-portal-jinja",
         "config": "sites/settings-portal-jinja/app_config",
         "routes": "sites/settings-portal-jinja/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh settings-portal-jinja",
+        "copy": "python3 scripts/theme-park.py starter-copy --source settings-portal-jinja --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter settings-portal-jinja"
       }
     },
     {
@@ -147,14 +315,20 @@
         "plain HTML delivery"
       ],
       "preview": {
-        "script": "scripts/preview-settings-static.sh",
+        "script": "scripts/preview-starter.sh settings-portal-static",
+        "path": "/sites/settings-portal-static/templates/index.html",
         "url": "http://127.0.0.1:8000/sites/settings-portal-static/templates/index.html",
-        "image": "./previews/settings-portal-static.svg"
+        "image": "./previews/settings-portal-static.png"
       },
       "paths": {
         "site_dir": "sites/settings-portal-static",
         "config": "sites/settings-portal-static/app_config",
         "routes": "sites/settings-portal-static/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh settings-portal-static",
+        "copy": "python3 scripts/theme-park.py starter-copy --source settings-portal-static --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter settings-portal-static"
       }
     }
   ]

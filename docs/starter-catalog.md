@@ -1,11 +1,17 @@
 # Starter Catalog
 
-This document is the human-readable companion to the manifest-driven root catalog.
+This document is the human-readable companion to the manifest-driven root catalog and control plane.
 
 For the live launcher view, use:
 
 ```bash
 scripts/preview-catalog.sh
+```
+
+For a full refresh with live screenshots, use:
+
+```bash
+npm run catalog:refresh
 ```
 
 ## Operations Family
@@ -50,6 +56,20 @@ scripts/preview-catalog.sh
 - strengths: queue demos, evidence layouts, approval boards, release summary surfaces
 - preview: `scripts/preview-review-static.sh`
 
+## Mission Control Family
+
+### `mission-control-jinja`
+
+- generated from the `operations` seed family through the root scaffold workflow
+- strengths: dashboards, list/detail workspaces, workflow review, monitoring, reference browsing, result pages
+- preview: `scripts/preview-starter.sh mission-control-jinja`
+
+### `mission-control-static`
+
+- generated from the `operations` seed family through the root scaffold workflow
+- strengths: plain HTML delivery, documentation previews, starter demos, simple shell walkthroughs
+- preview: `scripts/preview-starter.sh mission-control-static`
+
 ## Shared Layer
 
 All four starters consume the shared design system in:
@@ -81,4 +101,9 @@ Starter metadata now lives in:
 
 The root launcher data file is built from those manifests by:
 
-- `scripts/build-catalog.py`
+- `python3 scripts/theme-park.py build-catalog`
+
+Starter and family scaffolds are created from the root control plane by:
+
+- `python3 scripts/theme-park.py starter-copy`
+- `python3 scripts/theme-park.py family-create`

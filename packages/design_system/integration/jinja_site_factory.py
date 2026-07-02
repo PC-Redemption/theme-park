@@ -101,3 +101,25 @@ def create_jinja_demo_app(
         app.add_api_route(route["path"], handler, methods=["GET"], name=route["key"])
 
     return app
+
+
+def create_jinja_demo_app_from_config(*, site_dir: Path) -> FastAPI:
+    runtime_config = load_json(site_dir / "app_config" / "runtime.example.json")
+    page_titles = runtime_config.get("page_titles", {})
+
+    def page_title_builder(route: dict) -> tuple[str, str]:
+        details = page_titles.get(route["key"], {})
+        return (
+            details.get("title", route.get("nav_label", route["key"].title())),
+            details.get("subtitle", ""),
+        )
+
+    return create_jinja_demo_app(
+        site_dir=site_dir,
+        title=runtime_config["app_title"],
+        root_redirect=runtime_config["root_redirect"],
+        sidebar_title=runtime_config["sidebar_title"],
+        footer_items=runtime_config["footer_items"],
+        badge_labels=runtime_config["badge_labels"],
+        page_title_builder=page_title_builder,
+    )

@@ -1,0 +1,32 @@
+{
+  "branding": {
+    "name": "Mission Control Static",
+    "logo_path": "../static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "blue"
+  },
+  "summary": "Starter family for operational control rooms, active workstreams, and coordination dashboards.",
+  "sidebar_title": "Navigation",
+  "navigation": [
+    {
+      "key": "dashboard",
+      "label": "Dashboard",
+      "file": "dashboard.html"
+    },
+    {
+      "key": "records",
+      "label": "Records",
+      "file": "records.html"
+    },
+    {
+      "key": "review",
+      "label": "Review",
+      "file": "review.html"
+    },
+    {
+      "key": "settings",
+      "label": "Settings",
+      "file": "settings.html"
+    }
+  ]
+}

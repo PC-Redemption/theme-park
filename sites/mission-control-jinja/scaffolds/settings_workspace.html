@@ -1,0 +1,34 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/badges.html" import badge %}
+{% from "components/cards.html" import contract_card %}
+{% from "scaffolds/_helpers.html" import scaffold_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This settings workspace is placeholder-safe starter content with no settings reads or writes connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+
+  <section class="tp-section-stack" aria-labelledby="settings-workspace-title">
+    <div class="tp-content-head">
+      <div>
+        <p class="tp-kicker">Starter scaffold</p>
+        <h2 id="settings-workspace-title">Settings Workspace</h2>
+      </div>
+      {{ badge("validation required", "warning") }}
+    </div>
+
+    {{ scaffold_conventions(contract) }}
+
+    <div class="tp-action-bar">
+      <span class="tp-badge">Basics</span>
+      <span class="tp-badge">Limits</span>
+      <span class="tp-badge">Review</span>
+    </div>
+
+    <div class="tp-card-grid">
+      {{ contract_card("Form Region", "Use server-rendered defaults, field errors, and form-level validation.", "Form") }}
+      {{ contract_card("Change Review", "Show before-and-after or pending changes before a confirmed save.", "Safety") }}
+      {{ contract_card("Rollback Hint", "Explain how to restore or cancel a configuration change.", "Recovery") }}
+    </div>
+  </section>
+{% endblock %}

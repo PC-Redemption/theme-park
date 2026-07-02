@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Theme Park Catalog</title>
+    <title>Theme Park Control Plane</title>
     <link rel="stylesheet" href="../packages/design-system/styles/shell.css">
     <script defer src="../packages/design-system/scripts/shell.js"></script>
     <script defer src="./launcher.js"></script>
@@ -15,7 +15,7 @@
           <span>Theme Park</span>
         </a>
         <nav aria-label="Breadcrumb">
-          <span class="tp-muted">Home / Starter Catalog</span>
+          <span class="tp-muted">Home / Control Plane</span>
         </nav>
         <div class="tp-action-bar">
           <button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button>
@@ -24,39 +24,125 @@
       <div class="tp-shell-grid">
         <aside class="tp-sidebar">
           <div class="tp-sidebar-toolbar">
-            <strong>Catalog</strong>
+            <strong>Workflows</strong>
           </div>
-          <nav class="tp-nav-links" aria-label="Catalog sections">
-            <a class="active" href="#all">All Starters</a>
-            <a href="#operations">Operations</a>
-            <a href="#settings">Settings</a>
+          <nav class="tp-nav-links" aria-label="Control plane sections" id="family-nav">
+            <a class="active" href="#overview">Overview</a>
+            <a href="#builders">Builders</a>
+            <a href="#starters">Starters</a>
           </nav>
         </aside>
         <main class="tp-main">
           <div class="tp-content-head">
             <div>
               <p class="tp-kicker">Root launcher</p>
-              <h1>Starter Catalog</h1>
-              <p class="tp-subtitle">Browse starter families, preview commands, runtimes, and strengths from one place.</p>
+              <h1>Starter Control Plane</h1>
+              <p class="tp-subtitle">Search starters, generate scaffold commands, and refresh live preview screenshots from one root workflow surface.</p>
             </div>
             <div class="tp-action-bar">
               <span class="tp-badge" id="starter-count">Loading</span>
+              <span class="tp-badge" id="family-count">Loading</span>
             </div>
           </div>
           <div class="tp-content-body tp-section-stack">
-            <section class="tp-card">
-              <strong>How to use this</strong>
-              <p class="tp-subtitle">Pick the closest family, choose static or Jinja, preview locally, then copy the starter into a new site directory before customizing site-local config and pages.</p>
+            <section class="tp-hero-grid" id="overview">
+              <article class="tp-card tp-hero-card">
+                <span class="tp-muted">Catalog pipeline</span>
+                <strong>Build the catalog and static renders</strong>
+                <p class="tp-subtitle">Refresh generated pages and manifest data before browsing or publishing changes.</p>
+                <div class="tp-command-stack">
+                  <code>npm run catalog:build</code>
+                </div>
+              </article>
+              <article class="tp-card tp-hero-card">
+                <span class="tp-muted">Live screenshots</span>
+                <strong>Capture previews from running starters</strong>
+                <p class="tp-subtitle">Use Playwright-backed captures instead of generated placeholder artwork.</p>
+                <div class="tp-command-stack">
+                  <code>npm run catalog:shots</code>
+                </div>
+              </article>
+              <article class="tp-card tp-hero-card">
+                <span class="tp-muted">One-shot refresh</span>
+                <strong>Rebuild everything in one command</strong>
+                <p class="tp-subtitle">Build static output, capture previews, and rewrite the catalog JSON in sequence.</p>
+                <div class="tp-command-stack">
+                  <code>npm run catalog:refresh</code>
+                </div>
+              </article>
             </section>
+
+            <section class="tp-card" id="builders">
+              <div class="tp-action-bar">
+                <strong>Workflow Builders</strong>
+                <span class="tp-muted">Generate copyable commands for common starter operations</span>
+              </div>
+              <div class="tp-builder-grid">
+                <article class="tp-card tp-builder-card">
+                  <strong>Preview starter</strong>
+                  <label class="tp-form-field">
+                    <span>Starter</span>
+                    <select id="builder-preview-starter"></select>
+                  </label>
+                  <div class="tp-command-stack">
+                    <code id="builder-preview-command">Loading...</code>
+                  </div>
+                  <button class="tp-button secondary" type="button" data-copy-target="builder-preview-command">Copy command</button>
+                </article>
+                <article class="tp-card tp-builder-card">
+                  <strong>Copy starter</strong>
+                  <label class="tp-form-field">
+                    <span>Source starter</span>
+                    <select id="builder-copy-source"></select>
+                  </label>
+                  <label class="tp-form-field">
+                    <span>New starter key</span>
+                    <input id="builder-copy-dest" type="text" placeholder="mission-control-jinja">
+                  </label>
+                  <label class="tp-form-field">
+                    <span>Display name</span>
+                    <input id="builder-copy-name" type="text" placeholder="Mission Control Jinja">
+                  </label>
+                  <div class="tp-command-stack">
+                    <code id="builder-copy-command">Loading...</code>
+                  </div>
+                  <button class="tp-button secondary" type="button" data-copy-target="builder-copy-command">Copy command</button>
+                </article>
+                <article class="tp-card tp-builder-card">
+                  <strong>Create starter family</strong>
+                  <label class="tp-form-field">
+                    <span>Seed family</span>
+                    <select id="builder-family-seed"></select>
+                  </label>
+                  <label class="tp-form-field">
+                    <span>New family slug</span>
+                    <input id="builder-family-slug" type="text" placeholder="mission-control">
+                  </label>
+                  <label class="tp-form-field">
+                    <span>Site slug</span>
+                    <input id="builder-family-site" type="text" placeholder="mission-control">
+                  </label>
+                  <label class="tp-form-field">
+                    <span>Display name</span>
+                    <input id="builder-family-name" type="text" placeholder="Mission Control">
+                  </label>
+                  <div class="tp-command-stack">
+                    <code id="builder-family-command">Loading...</code>
+                  </div>
+                  <button class="tp-button secondary" type="button" data-copy-target="builder-family-command">Copy command</button>
+                </article>
+              </div>
+            </section>
+
             <section class="tp-card">
               <div class="tp-action-bar">
-                <strong>Find a starter</strong>
-                <span class="tp-muted">Search, filter, and compare</span>
+                <strong>Find starters</strong>
+                <span class="tp-muted">Search, compare, and open the nearest starter for your next site</span>
               </div>
               <div class="tp-form-grid">
                 <label class="tp-form-field">
                   <span>Search</span>
-                  <input id="catalog-search" type="text" placeholder="operations, settings, review, audit...">
+                  <input id="catalog-search" type="text" placeholder="operations, settings, review, queue...">
                 </label>
                 <label class="tp-form-field">
                   <span>Family</span>
@@ -74,12 +160,13 @@
                 </label>
               </div>
             </section>
-            <section class="tp-card" id="all">
+
+            <section class="tp-card" id="starters">
               <div class="tp-action-bar">
-                <strong>All starters</strong>
-                <span class="tp-muted" id="family-count">Loading families</span>
+                <strong>Starter cards</strong>
+                <span class="tp-muted" id="catalog-status">Loading starter manifests</span>
               </div>
-              <div class="tp-card-grid" id="starter-grid">
+              <div class="tp-card-grid tp-starter-grid" id="starter-grid">
                 <article class="tp-card"><strong>Loading starter catalog...</strong></article>
               </div>
             </section>
@@ -87,8 +174,8 @@
         </main>
       </div>
       <footer class="tp-footer">
-        <span>Catalog: root launcher</span>
-        <span>Data: starter manifests</span>
+        <span>Catalog: control plane</span>
+        <span>Data: starter manifests plus live screenshots</span>
       </footer>
     </div>
   </body>

@@ -1,0 +1,14 @@
+{
+  "app_title": "Settings Portal Jinja Demo",
+  "root_redirect": "/health",
+  "sidebar_title": "Admin Navigation",
+  "footer_items": [
+    "Starter: settings-portal-jinja",
+    "Runtime: FastAPI + Jinja"
+  ],
+  "badge_labels": [
+    { "label": "Jinja", "tone": "neutral" },
+    { "label": "Admin", "tone": "success" }
+  ],
+  "page_titles": {}
+}

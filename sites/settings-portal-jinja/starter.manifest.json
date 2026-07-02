@@ -12,8 +12,8 @@
     "table-heavy admin pages"
   ],
   "preview": {
-    "script": "scripts/preview-settings-jinja.sh",
-    "url": "http://127.0.0.1:8000/health"
+    "script": "scripts/preview-starter.sh settings-portal-jinja",
+    "path": "/health"
   },
   "paths": {
     "site_dir": "sites/settings-portal-jinja",

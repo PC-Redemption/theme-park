@@ -1,0 +1,18 @@
+{
+  "app_title": "Operations Shell Jinja Demo",
+  "root_redirect": "/dashboard",
+  "sidebar_title": "Navigation",
+  "footer_items": [
+    "Starter: operations-shell-jinja",
+    "Runtime: FastAPI + Jinja"
+  ],
+  "badge_labels": [
+    { "label": "Jinja", "tone": "neutral" }
+  ],
+  "page_titles": {
+    "dashboard": {
+      "title": "Operations Dashboard",
+      "subtitle": "Jinja-backed starter for summary-first dashboard layouts."
+    }
+  }
+}

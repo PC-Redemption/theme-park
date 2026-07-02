@@ -11,8 +11,8 @@
     "simple shell walkthroughs"
   ],
   "preview": {
-    "script": "scripts/preview-static.sh",
-    "url": "http://127.0.0.1:8000/sites/operations-shell-static/templates/index.html"
+    "script": "scripts/preview-starter.sh operations-shell-static",
+    "path": "/sites/operations-shell-static/templates/index.html"
   },
   "paths": {
     "site_dir": "sites/operations-shell-static",

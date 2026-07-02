@@ -6,6 +6,7 @@ The repo is organized around two boundaries:
 
 - `packages/` for shared design-system and framework code
 - `sites/` for clearly separated starter sites, each with its own local identity and documentation
+- `catalog/` for the root-level control plane and starter discovery experience
 
 Current starter implementations:
 
@@ -13,11 +14,17 @@ Current starter implementations:
 - `sites/operations-shell-static/` for a framework-neutral static starter
 - `sites/settings-portal-jinja/` for a Jinja-first admin and settings starter
 - `sites/settings-portal-static/` for a framework-neutral admin and settings starter
+- `sites/review-studio-jinja/` for a review and approvals starter
+- `sites/review-studio-static/` for a framework-neutral review starter
+- `sites/mission-control-jinja/` for a generated proof family created from the new scaffold workflow
+- `sites/mission-control-static/` for the matching framework-neutral generated proof family
 
 Default local workflow:
 
 - use an ignored `.venv/` for Python-backed starter previews
 - use small repo-local preview scripts under `scripts/`
+- use the root control-plane commands in `scripts/theme-park.py`
+- use Playwright for live screenshot capture
 
 ## Goals
 
@@ -39,13 +46,21 @@ Default local workflow:
 
 ```bash
 scripts/setup-venv.sh
-scripts/preview-jinja.sh
-scripts/preview-settings-jinja.sh
-scripts/preview-review-jinja.sh
-scripts/preview-static.sh
-scripts/preview-settings-static.sh
-scripts/preview-review-static.sh
+scripts/preview-starter.sh operations-shell-jinja
+scripts/preview-starter.sh settings-portal-static
 scripts/preview-catalog.sh
+```
+
+## Control Plane Commands
+
+```bash
+python3 scripts/theme-park.py build-static
+python3 scripts/theme-park.py build-catalog
+python3 scripts/theme-park.py starter-copy --source operations-shell-jinja --dest your-new-starter
+python3 scripts/theme-park.py family-create --seed-family operations --family your-family --site-slug your-site
+npm install
+npx playwright install chromium
+npm run catalog:refresh
 ```
 
 ## Repo Rules
@@ -57,7 +72,7 @@ scripts/preview-catalog.sh
 
 ## Next Steps
 
-1. create the repo skeleton under `packages/`, `sites/`, and `docs/`
-2. inspect the private source app in a safe execution environment
-3. extract shared design tokens and primitives
-4. publish the first isolated starter implementations
+1. keep pressure-testing family generation against more distinct information architectures
+2. add starter onboarding templates for non-Python runtimes beyond static HTML
+3. promote more repeated site scaffolds into explicit shared contracts
+4. add publish-ready remote and release automation once the public repo destination is chosen

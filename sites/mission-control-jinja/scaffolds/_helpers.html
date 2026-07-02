@@ -1,0 +1,51 @@
+{% from "components/status.html" import status_indicator %}
+
+{% macro scaffold_conventions(contract) -%}
+  <section class="tp-card" aria-label="{{ contract.title }}">
+    <div class="tp-action-bar">
+      <div>
+        <strong>{{ contract.title }}</strong>
+        <p class="tp-subtitle">{{ contract.summary }}</p>
+      </div>
+      <div class="tp-action-bar" aria-label="Required statuses">
+        {% for status in contract.statuses %}
+          {{ status_indicator(status, True) }}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="tp-card-grid">
+      <article class="tp-card">
+        <span class="tp-muted">Content Frame</span>
+        <p>{{ contract.content_frame }}</p>
+      </article>
+      <article class="tp-card">
+        <span class="tp-muted">Data Views</span>
+        <p>{{ contract.data_view }}</p>
+      </article>
+      <article class="tp-card">
+        <span class="tp-muted">Forms And Actions</span>
+        <p>{{ contract.form_action }}</p>
+      </article>
+    </div>
+  </section>
+{%- endmacro %}
+
+{% macro reference_links(reference_set) -%}
+  {% if reference_set and reference_set.links %}
+    <section class="tp-card" aria-label="{{ reference_set.title }}">
+      <div>
+        <p class="tp-kicker">Reference Paths</p>
+        <strong>{{ reference_set.title }}</strong>
+        <p class="tp-subtitle">{{ reference_set.summary }}</p>
+      </div>
+      <div class="tp-card-grid">
+        {% for link in reference_set.links %}
+          <article class="tp-card">
+            <strong>{{ link.label }}</strong>
+            <p class="tp-subtitle">{{ link.summary }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{%- endmacro %}

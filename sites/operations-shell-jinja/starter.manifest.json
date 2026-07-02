@@ -13,8 +13,8 @@
     "results pages"
   ],
   "preview": {
-    "script": "scripts/preview-jinja.sh",
-    "url": "http://127.0.0.1:8000/dashboard"
+    "script": "scripts/preview-starter.sh operations-shell-jinja",
+    "path": "/dashboard"
   },
   "paths": {
     "site_dir": "sites/operations-shell-jinja",
