@@ -1,0 +1,52 @@
+{
+  "branding": {
+    "name": "Release Hub Jinja",
+    "logo_path": "/site-static/logo.svg",
+    "favicon_path": "/site-static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "red"
+  },
+  "navigation": {
+    "breadcrumb": [
+      {
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "label": "Queue",
+        "url": "/queue"
+      }
+    ],
+    "focused_nav": [
+      {
+        "key": "queue",
+        "label": "Readiness",
+        "url": "/queue"
+      },
+      {
+        "key": "evidence",
+        "label": "Handoffs",
+        "url": "/evidence"
+      },
+      {
+        "key": "approvals",
+        "label": "Go / No-Go",
+        "url": "/approvals"
+      },
+      {
+        "key": "release",
+        "label": "Launch Summary",
+        "url": "/release"
+      }
+    ]
+  },
+  "permissions": {
+    "can_review": true,
+    "can_approve": true
+  },
+  "page_frame": {
+    "kicker": "Release starter",
+    "title": "Release Hub",
+    "subtitle": "Starter family for release readiness reviews, evidence handoff, approvals, and launch summaries."
+  }
+}

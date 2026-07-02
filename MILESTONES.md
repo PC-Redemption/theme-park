@@ -121,6 +121,12 @@ Current evidence:
 - `operations-shell-static`
 - `settings-portal-jinja`
 - `settings-portal-static`
+- `review-studio-jinja`
+- `review-studio-static`
+- `mission-control-jinja`
+- `mission-control-static`
+- `release-hub-jinja`
+- `release-hub-static`
 
 ## Milestone 8: Public launch
 

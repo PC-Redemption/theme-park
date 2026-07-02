@@ -1,0 +1,29 @@
+{
+  "app_title": "Release Hub Jinja Demo",
+  "root_redirect": "/queue",
+  "sidebar_title": "Release Navigation",
+  "footer_items": [
+    "Starter: release-hub-jinja",
+    "Runtime: FastAPI + Jinja"
+  ],
+  "badge_labels": [
+    {
+      "label": "Jinja",
+      "tone": "neutral"
+    },
+    {
+      "label": "Release",
+      "tone": "danger"
+    }
+  ],
+  "page_titles": {
+    "queue": {
+      "title": "Release Readiness",
+      "subtitle": "Track launch candidates, blockers, and sign-off progress."
+    },
+    "release": {
+      "title": "Launch Summary",
+      "subtitle": "Review launch scope, outcomes, and final decision context."
+    }
+  }
+}

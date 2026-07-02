@@ -88,7 +88,7 @@
   }
 
   function populateStarterInputs(data) {
-    ["builder-preview-starter", "builder-copy-source"].forEach(function (id) {
+    ["builder-preview-starter", "builder-copy-source", "builder-export-starter"].forEach(function (id) {
       const select = byId(id);
       if (!select) return;
       data.starters.forEach(function (starter) {
@@ -172,6 +172,13 @@
     if (familyCommand) {
       familyCommand.textContent = "python3 scripts/theme-park.py family-create --seed-family " + familySeed + " --family " + familySlug + " --site-slug " + familySite + ' --display-name "' + familyName + '"';
     }
+
+    const exportStarter = byId("builder-export-starter")?.value || catalogData.starters[0]?.key || "";
+    const exportOutput = byId("builder-export-output")?.value || "dist/starter-bundles";
+    const exportCommand = byId("builder-export-command");
+    if (exportCommand) {
+      exportCommand.textContent = "python3 scripts/theme-park.py starter-export --starter " + exportStarter + " --output " + exportOutput;
+    }
   }
 
   function bindFilters() {
@@ -185,7 +192,7 @@
         renderCatalog(catalogData);
       });
     });
-    ["builder-preview-starter", "builder-copy-source", "builder-copy-dest", "builder-copy-name", "builder-family-seed", "builder-family-slug", "builder-family-site", "builder-family-name"].forEach(function (id) {
+    ["builder-preview-starter", "builder-copy-source", "builder-copy-dest", "builder-copy-name", "builder-family-seed", "builder-family-slug", "builder-family-site", "builder-family-name", "builder-export-starter", "builder-export-output"].forEach(function (id) {
       const element = byId(id);
       if (!element) return;
       element.addEventListener("input", refreshBuilders);

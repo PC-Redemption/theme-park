@@ -169,7 +169,7 @@ Goal:
 Outputs:
 
 - sanitization pass
-- licensing and attribution review
+- MIT licensing and attribution review
 - onboarding docs
 - example screenshots or demos
 

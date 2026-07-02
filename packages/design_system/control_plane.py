@@ -33,6 +33,10 @@ def sites_dir() -> Path:
     return repo_root() / "sites"
 
 
+def families_dir() -> Path:
+    return repo_root() / "families"
+
+
 def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
 
@@ -43,6 +47,15 @@ def runtime_label(runtime: str) -> str:
 
 def title_case_slug(value: str) -> str:
     return " ".join(part.capitalize() for part in value.replace("_", "-").split("-") if part)
+
+
+def merge_dict(base: dict[str, Any], updates: dict[str, Any]) -> dict[str, Any]:
+    for key, value in updates.items():
+        if isinstance(value, dict) and isinstance(base.get(key), dict):
+            merge_dict(base[key], value)
+        else:
+            base[key] = value
+    return base
 
 
 @dataclass
@@ -149,6 +162,8 @@ def build_catalog_payload() -> dict[str, Any]:
             "preview": "scripts/preview-starter.sh STARTER_KEY",
             "copy": "python3 scripts/theme-park.py starter-copy --source STARTER_KEY --dest NEW_KEY",
             "family_create": "python3 scripts/theme-park.py family-create --seed-family operations --family NEW_FAMILY --site-slug NEW_SITE",
+            "family_sync": "python3 scripts/theme-park.py family-sync --config families/FAMILY.json",
+            "export": "python3 scripts/theme-park.py starter-export --starter STARTER_KEY",
             "screenshots": "node scripts/capture-previews.mjs",
         },
         "starters": starter_payloads,
@@ -225,6 +240,140 @@ def _rewrite_branding(site_dir: Path, starter_name: str, summary: str, runtime: 
         write_json(runtime_path, payload)
 
 
+def apply_family_runtime_overrides(site_dir: Path, runtime: str, overrides: dict[str, Any]) -> None:
+    if not overrides:
+        return
+
+    if runtime == "static":
+        config_path = site_dir / "app_config" / "site.example.json"
+        payload = load_json(config_path)
+        if "theme_color" in overrides:
+            payload["branding"]["default_theme_color"] = overrides["theme_color"]
+        if "theme_mode" in overrides:
+            payload["branding"]["default_theme_mode"] = overrides["theme_mode"]
+        if "sidebar_title" in overrides:
+            payload["sidebar_title"] = overrides["sidebar_title"]
+        if "summary" in overrides:
+            payload["summary"] = overrides["summary"]
+        if "navigation_labels" in overrides:
+            label_map = overrides["navigation_labels"]
+            for item in payload.get("navigation", []):
+                if item["key"] in label_map:
+                    item["label"] = label_map[item["key"]]
+        write_json(config_path, payload)
+        return
+
+    shell_path = site_dir / "app_config" / "shell.example.json"
+    runtime_path = site_dir / "app_config" / "runtime.example.json"
+    shell_payload = load_json(shell_path)
+    runtime_payload = load_json(runtime_path)
+
+    if "theme_color" in overrides:
+        shell_payload["branding"]["default_theme_color"] = overrides["theme_color"]
+    if "theme_mode" in overrides:
+        shell_payload["branding"]["default_theme_mode"] = overrides["theme_mode"]
+    if "sidebar_title" in overrides:
+        runtime_payload["sidebar_title"] = overrides["sidebar_title"]
+    if "root_redirect" in overrides:
+        runtime_payload["root_redirect"] = overrides["root_redirect"]
+    if "badge_labels" in overrides:
+        runtime_payload["badge_labels"] = overrides["badge_labels"]
+    if "page_titles" in overrides:
+        runtime_payload["page_titles"] = overrides["page_titles"]
+    if "page_kicker" in overrides:
+        shell_payload["page_frame"]["kicker"] = overrides["page_kicker"]
+    if "summary" in overrides:
+        shell_payload["page_frame"]["subtitle"] = overrides["summary"]
+    if "navigation_labels" in overrides:
+        label_map = overrides["navigation_labels"]
+        for item in shell_payload["navigation"]["focused_nav"]:
+            if item["key"] in label_map:
+                item["label"] = label_map[item["key"]]
+
+    write_json(shell_path, shell_payload)
+    write_json(runtime_path, runtime_payload)
+
+
+def load_family_spec(path: Path) -> dict[str, Any]:
+    payload = load_json(path)
+    payload.setdefault("runtime_overrides", {})
+    return payload
+
+
+def apply_family_spec(spec: dict[str, Any]) -> list[Path]:
+    updated = []
+    site_slug = slugify(spec["site_slug"])
+    display_name = spec.get("display_name") or title_case_slug(site_slug)
+    summary = spec.get("summary") or f"Starter family derived from {spec['seed_family']}."
+    family_slug = slugify(spec["family"])
+
+    for runtime in RUNTIME_ORDER:
+        site_dir = sites_dir() / f"{site_slug}-{runtime}"
+        if not site_dir.exists():
+            continue
+
+        starter_name = f"{display_name} {runtime_label(runtime)}"
+        manifest_path = site_dir / "starter.manifest.json"
+        manifest = load_json(manifest_path)
+        manifest["name"] = starter_name
+        manifest["summary"] = summary
+        manifest["family"] = family_slug
+        write_json(manifest_path, manifest)
+
+        _rewrite_branding(site_dir, starter_name, summary, runtime)
+        apply_family_runtime_overrides(site_dir, runtime, spec.get("runtime_overrides", {}).get(runtime, {}))
+        updated.append(site_dir)
+
+    return updated
+
+
+def export_starter_bundle(*, starter_key: str, output_dir: Path) -> Path:
+    starter = starter_by_key(starter_key)
+    bundle_root = output_dir / starter_key
+    if bundle_root.exists():
+        shutil.rmtree(bundle_root)
+
+    (bundle_root / "packages").mkdir(parents=True, exist_ok=True)
+    (bundle_root / "sites").mkdir(parents=True, exist_ok=True)
+    (bundle_root / "scripts").mkdir(parents=True, exist_ok=True)
+
+    shutil.copytree(repo_root() / "packages" / "design-system", bundle_root / "packages" / "design-system")
+    shutil.copytree(repo_root() / "packages" / "design_system", bundle_root / "packages" / "design_system")
+    shutil.copytree(starter.site_dir, bundle_root / "sites" / starter.key)
+
+    for script_name in ("preview-starter.sh", "setup-venv.sh"):
+        shutil.copy2(repo_root() / "scripts" / script_name, bundle_root / "scripts" / script_name)
+
+    (bundle_root / "README.md").write_text(
+        "\n".join(
+            [
+                f"# {starter.name} Export",
+                "",
+                f"This bundle contains the `{starter.key}` starter and the shared Theme Park packages it depends on.",
+                "",
+                "## Contents",
+                "",
+                "- `packages/design-system/` for shared CSS, JS, templates, and tokens",
+                "- `packages/design_system/` for shared Python integration helpers",
+                f"- `sites/{starter.key}/` for the starter-local site files",
+                "- `scripts/preview-starter.sh` for local preview",
+                "- `scripts/setup-venv.sh` for Python-backed starter environments",
+                "",
+                "## Quick Start",
+                "",
+                "```bash",
+                "scripts/setup-venv.sh",
+                f"scripts/preview-starter.sh {starter.key}",
+                "```",
+                "",
+            ]
+        )
+        + "\n"
+    )
+
+    return bundle_root
+
+
 def seed_family_keys(seed_family: str) -> list[str]:
     matches = [starter.key for starter in discover_starters() if starter.family == seed_family]
     if not matches:
@@ -239,12 +388,14 @@ def create_family(
     site_slug: str,
     display_name: str | None = None,
     summary: str | None = None,
+    runtime_overrides: dict[str, dict[str, Any]] | None = None,
 ) -> list[Path]:
     created = []
     family_slug = slugify(family)
     site_slug = slugify(site_slug)
     base_name = display_name or f"{title_case_slug(site_slug)}"
     family_summary = summary or f"Starter family derived from {seed_family} for {title_case_slug(family_slug)} surfaces."
+    runtime_overrides = runtime_overrides or {}
 
     for starter_key in seed_family_keys(seed_family):
         starter = starter_by_key(starter_key)
@@ -260,4 +411,5 @@ def create_family(
                 family=family_slug,
             )
         )
+        apply_family_runtime_overrides(created[-1], runtime_suffix, runtime_overrides.get(runtime_suffix, {}))
     return created

@@ -4,7 +4,7 @@
     "logo_path": "/site-static/logo.svg",
     "favicon_path": "/site-static/logo.svg",
     "default_theme_mode": "light",
-    "default_theme_color": "blue"
+    "default_theme_color": "orange"
   },
   "navigation": {
     "breadcrumb": [
@@ -60,7 +60,7 @@
     "can_admin": true
   },
   "page_frame": {
-    "kicker": "Jinja starter",
+    "kicker": "Control plane starter",
     "title": "Mission Control",
     "subtitle": "Starter family for operational control rooms, active workstreams, and coordination dashboards."
   }

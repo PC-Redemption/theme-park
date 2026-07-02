@@ -1,0 +1,44 @@
+{
+  "seed_family": "review",
+  "family": "release-hub",
+  "site_slug": "release-hub",
+  "display_name": "Release Hub",
+  "summary": "Starter family for release readiness reviews, evidence handoff, approvals, and launch summaries.",
+  "runtime_overrides": {
+    "jinja": {
+      "theme_color": "red",
+      "sidebar_title": "Release Navigation",
+      "page_kicker": "Release starter",
+      "badge_labels": [
+        { "label": "Jinja", "tone": "neutral" },
+        { "label": "Release", "tone": "danger" }
+      ],
+      "navigation_labels": {
+        "queue": "Readiness",
+        "evidence": "Handoffs",
+        "approvals": "Go / No-Go",
+        "release": "Launch Summary"
+      },
+      "page_titles": {
+        "queue": {
+          "title": "Release Readiness",
+          "subtitle": "Track launch candidates, blockers, and sign-off progress."
+        },
+        "release": {
+          "title": "Launch Summary",
+          "subtitle": "Review launch scope, outcomes, and final decision context."
+        }
+      }
+    },
+    "static": {
+      "theme_color": "red",
+      "sidebar_title": "Release Navigation",
+      "navigation_labels": {
+        "queue": "Readiness",
+        "evidence": "Handoffs",
+        "approvals": "Go / No-Go",
+        "release": "Launch Summary"
+      }
+    }
+  }
+}

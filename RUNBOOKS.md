@@ -197,6 +197,26 @@ Checks:
 - static preview paths should point at the generated site, not the seed site
 - rebuild the catalog after generation so the control plane reflects the new family
 
+## Runbook 7C: Manage Family Specs
+
+Use when:
+
+- you want a family definition to be repeatable, reviewable, and reusable after initial generation
+
+Steps:
+
+1. run `python3 scripts/theme-park.py family-spec-init --output families/my-family.json`
+2. edit the generated spec with public-safe summary, labels, theme colors, and runtime overrides
+3. create the family with `python3 scripts/theme-park.py family-create --config families/my-family.json`
+4. later reapply the spec with `python3 scripts/theme-park.py family-sync --config families/my-family.json`
+5. recapture live screenshots for the changed starters
+
+Checks:
+
+- family specs should stay generic and safe to publish
+- use runtime overrides for theme color, sidebar title, labels, and page-title refinements
+- keep family specs under `families/` so the control plane has one predictable place to find them
+
 ## Runbook 8: Sanitize For Public Release
 
 Use when:
@@ -207,7 +227,7 @@ Steps:
 
 1. scan for private names, internal URLs, product labels, and environment assumptions
 2. replace sensitive labels with generic placeholders
-3. verify licenses and ownership for copied assets or snippets
+3. verify MIT compatibility and ownership for copied assets or snippets
 4. confirm the repo runs without private services
 5. review docs from the perspective of an outside user
 

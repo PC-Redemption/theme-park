@@ -1,7 +1,7 @@
 {
   "app_title": "Mission Control Jinja Demo",
   "root_redirect": "/dashboard",
-  "sidebar_title": "Navigation",
+  "sidebar_title": "Control Navigation",
   "footer_items": [
     "Starter: mission-control-jinja",
     "Runtime: FastAPI + Jinja"
@@ -10,12 +10,16 @@
     {
       "label": "Jinja",
       "tone": "neutral"
+    },
+    {
+      "label": "Coordination",
+      "tone": "warning"
     }
   ],
   "page_titles": {
     "dashboard": {
-      "title": "Operations Dashboard",
-      "subtitle": "Jinja-backed starter for summary-first dashboard layouts."
+      "title": "Mission Overview",
+      "subtitle": "High-signal summary surface for teams coordinating active work."
     }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "key": "release-hub-static",
+  "name": "Release Hub Static",
+  "family": "release-hub",
+  "runtime": "static",
+  "summary": "Starter family for release readiness reviews, evidence handoff, approvals, and launch summaries.",
+  "strengths": [
+    "review queues",
+    "evidence bundles",
+    "approval boards",
+    "release summaries"
+  ],
+  "preview": {
+    "script": "scripts/preview-starter.sh release-hub-static",
+    "path": "/sites/release-hub-static/templates/index.html"
+  },
+  "paths": {
+    "site_dir": "sites/release-hub-static",
+    "config": "sites/release-hub-static/app_config",
+    "routes": "sites/release-hub-static/routes"
+  }
+}

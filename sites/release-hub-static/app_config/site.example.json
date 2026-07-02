@@ -1,0 +1,32 @@
+{
+  "branding": {
+    "name": "Release Hub Static",
+    "logo_path": "../static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "red"
+  },
+  "summary": "Starter family for release readiness reviews, evidence handoff, approvals, and launch summaries.",
+  "sidebar_title": "Release Navigation",
+  "navigation": [
+    {
+      "key": "queue",
+      "label": "Readiness",
+      "file": "queue.html"
+    },
+    {
+      "key": "evidence",
+      "label": "Handoffs",
+      "file": "evidence.html"
+    },
+    {
+      "key": "approvals",
+      "label": "Go / No-Go",
+      "file": "approvals.html"
+    },
+    {
+      "key": "release",
+      "label": "Launch Summary",
+      "file": "release.html"
+    }
+  ]
+}

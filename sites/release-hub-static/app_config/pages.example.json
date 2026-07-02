@@ -1,0 +1,86 @@
+{
+  "pages": [
+    {
+      "key": "queue",
+      "label": "Queue",
+      "file": "queue.html",
+      "kicker": "Static starter",
+      "title": "Review Queue",
+      "subtitle": "Queue-first triage and review layout.",
+      "badges": ["Review"],
+      "card_title": "Queue overview",
+      "card_body": "Priority items, aging, and next review actions.",
+      "sections": [
+        {
+          "type": "status_cards",
+          "items": [
+            { "label": "Ready", "value": "18 items", "tone": "info" },
+            { "label": "Blocked", "value": "2 items", "tone": "warning" },
+            { "label": "Assigned", "value": "5 reviewers", "tone": "success" }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "evidence",
+      "label": "Evidence",
+      "file": "evidence.html",
+      "kicker": "Static starter",
+      "title": "Evidence Bundle",
+      "subtitle": "Side-by-side evidence, notes, and context.",
+      "badges": ["Evidence"],
+      "card_title": "Evidence bundle",
+      "card_body": "Artifacts, notes, and references in one view.",
+      "sections": [
+        {
+          "type": "card_grid",
+          "items": [
+            { "eyebrow": "Evidence rail", "title": "Attachments", "body": "Selected artifacts and source material." },
+            { "eyebrow": "Notes panel", "title": "Reviewer notes", "body": "Findings, commentary, and review notes." }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "approvals",
+      "label": "Approvals",
+      "file": "approvals.html",
+      "kicker": "Static starter",
+      "title": "Approval Board",
+      "subtitle": "Gate checks, signoff state, and escalation paths.",
+      "badges": ["Approvals"],
+      "card_title": "Approval board",
+      "card_body": "Pending, approved, and escalated review gates.",
+      "sections": [
+        {
+          "type": "status_cards",
+          "items": [
+            { "label": "Pending", "value": "3 gates", "tone": "warning" },
+            { "label": "Approved", "value": "7 gates", "tone": "success" },
+            { "label": "Escalations", "value": "1 follow-up", "tone": "info" }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "release",
+      "label": "Release",
+      "file": "release.html",
+      "kicker": "Static starter",
+      "title": "Release Summary",
+      "subtitle": "Release-ready reporting and signoff output.",
+      "badges": ["Release"],
+      "card_title": "Release summary",
+      "card_body": "Narrative, evidence links, and final output state.",
+      "sections": [
+        {
+          "type": "card_grid",
+          "items": [
+            { "eyebrow": "Summary", "title": "Release Notes", "body": "Outcome summaries and reviewer narrative." },
+            { "eyebrow": "Evidence", "title": "Evidence Links", "body": "Supporting proof and signoff references." }
+          ]
+        }
+      ]
+    }
+  ]
+}

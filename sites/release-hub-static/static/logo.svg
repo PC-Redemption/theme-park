@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title>Review Studio</title>
+  <rect width="96" height="96" rx="18" fill="#221826"/>
+  <rect x="12" y="12" width="72" height="72" rx="14" fill="#6652a6"/>
+  <path d="M30 48h12l6 8 18-20 6 6-24 28-12-14H30z" fill="#fff"/>
+</svg>

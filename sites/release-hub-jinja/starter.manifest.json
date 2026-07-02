@@ -1,0 +1,22 @@
+{
+  "key": "release-hub-jinja",
+  "name": "Release Hub Jinja",
+  "family": "release-hub",
+  "runtime": "jinja",
+  "summary": "Starter family for release readiness reviews, evidence handoff, approvals, and launch summaries.",
+  "strengths": [
+    "review queues",
+    "evidence bundles",
+    "approval boards",
+    "release summaries"
+  ],
+  "preview": {
+    "script": "scripts/preview-starter.sh release-hub-jinja",
+    "path": "/queue"
+  },
+  "paths": {
+    "site_dir": "sites/release-hub-jinja",
+    "config": "sites/release-hub-jinja/app_config",
+    "routes": "sites/release-hub-jinja/routes"
+  }
+}

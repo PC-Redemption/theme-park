@@ -1,0 +1,28 @@
+{
+  "seed_family": "operations",
+  "family": "mission-control",
+  "site_slug": "mission-control",
+  "display_name": "Mission Control",
+  "summary": "Starter family for operational control rooms, active workstreams, and coordination dashboards.",
+  "runtime_overrides": {
+    "jinja": {
+      "theme_color": "orange",
+      "sidebar_title": "Control Navigation",
+      "page_kicker": "Control plane starter",
+      "badge_labels": [
+        { "label": "Jinja", "tone": "neutral" },
+        { "label": "Coordination", "tone": "warning" }
+      ],
+      "page_titles": {
+        "dashboard": {
+          "title": "Mission Overview",
+          "subtitle": "High-signal summary surface for teams coordinating active work."
+        }
+      }
+    },
+    "static": {
+      "theme_color": "orange",
+      "sidebar_title": "Control Navigation"
+    }
+  }
+}

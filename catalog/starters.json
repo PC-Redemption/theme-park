@@ -1,6 +1,6 @@
 {
   "generated_from": "sites/*/starter.manifest.json",
-  "starter_count": 8,
+  "starter_count": 10,
   "families": {
     "mission-control": {
       "label": "Mission Control",
@@ -44,6 +44,24 @@
         "simple shell walkthroughs",
         "starter demos",
         "workflow review"
+      ]
+    },
+    "release-hub": {
+      "label": "Release Hub",
+      "accent": "#17617f",
+      "starters": [
+        "release-hub-jinja",
+        "release-hub-static"
+      ],
+      "runtimes": [
+        "jinja",
+        "static"
+      ],
+      "strengths": [
+        "approval boards",
+        "evidence bundles",
+        "release summaries",
+        "review queues"
       ]
     },
     "review": {
@@ -91,6 +109,8 @@
     "preview": "scripts/preview-starter.sh STARTER_KEY",
     "copy": "python3 scripts/theme-park.py starter-copy --source STARTER_KEY --dest NEW_KEY",
     "family_create": "python3 scripts/theme-park.py family-create --seed-family operations --family NEW_FAMILY --site-slug NEW_SITE",
+    "family_sync": "python3 scripts/theme-park.py family-sync --config families/FAMILY.json",
+    "export": "python3 scripts/theme-park.py starter-export --starter STARTER_KEY",
     "screenshots": "node scripts/capture-previews.mjs"
   },
   "starters": [
@@ -212,6 +232,64 @@
         "preview": "scripts/preview-starter.sh operations-shell-static",
         "copy": "python3 scripts/theme-park.py starter-copy --source operations-shell-static --dest your-new-key",
         "screenshot": "node scripts/capture-previews.mjs --starter operations-shell-static"
+      }
+    },
+    {
+      "key": "release-hub-jinja",
+      "name": "Release Hub Jinja",
+      "family": "release-hub",
+      "runtime": "jinja",
+      "summary": "Starter family for release readiness reviews, evidence handoff, approvals, and launch summaries.",
+      "strengths": [
+        "review queues",
+        "evidence bundles",
+        "approval boards",
+        "release summaries"
+      ],
+      "preview": {
+        "script": "scripts/preview-starter.sh release-hub-jinja",
+        "path": "/queue",
+        "url": "http://127.0.0.1:8000/queue",
+        "image": "./previews/release-hub-jinja.png"
+      },
+      "paths": {
+        "site_dir": "sites/release-hub-jinja",
+        "config": "sites/release-hub-jinja/app_config",
+        "routes": "sites/release-hub-jinja/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh release-hub-jinja",
+        "copy": "python3 scripts/theme-park.py starter-copy --source release-hub-jinja --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter release-hub-jinja"
+      }
+    },
+    {
+      "key": "release-hub-static",
+      "name": "Release Hub Static",
+      "family": "release-hub",
+      "runtime": "static",
+      "summary": "Starter family for release readiness reviews, evidence handoff, approvals, and launch summaries.",
+      "strengths": [
+        "review queues",
+        "evidence bundles",
+        "approval boards",
+        "release summaries"
+      ],
+      "preview": {
+        "script": "scripts/preview-starter.sh release-hub-static",
+        "path": "/sites/release-hub-static/templates/index.html",
+        "url": "http://127.0.0.1:8000/sites/release-hub-static/templates/index.html",
+        "image": "./previews/release-hub-static.png"
+      },
+      "paths": {
+        "site_dir": "sites/release-hub-static",
+        "config": "sites/release-hub-static/app_config",
+        "routes": "sites/release-hub-static/routes"
+      },
+      "commands": {
+        "preview": "scripts/preview-starter.sh release-hub-static",
+        "copy": "python3 scripts/theme-park.py starter-copy --source release-hub-static --dest your-new-key",
+        "screenshot": "node scripts/capture-previews.mjs --starter release-hub-static"
       }
     },
     {

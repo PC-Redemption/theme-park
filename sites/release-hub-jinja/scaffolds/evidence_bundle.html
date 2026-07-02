@@ -1,0 +1,16 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/tables.html" import table_empty %}
+{% from "scaffolds/_helpers.html" import review_conventions, reference_links %}
+{% block content %}
+{{ alert("Starter scaffold only", "This evidence view is placeholder-safe starter content with no attached artifacts connected.", "warning") }}
+{{ reference_links(reference_set) }}
+<section class="tp-section-stack">
+  {{ review_conventions(contract) }}
+  <div class="tp-card-grid">
+    <section class="tp-card"><strong>Evidence rail</strong><p class="tp-subtitle">Use this region for selected attachments and source material.</p></section>
+    <section class="tp-card"><strong>Notes panel</strong><p class="tp-subtitle">Use this region for findings, commentary, and reviewer notes.</p></section>
+  </div>
+  {{ table_empty("Placeholder evidence list. Future attachments should come from server context.") }}
+</section>
+{% endblock %}

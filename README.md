@@ -2,6 +2,8 @@
 
 Theme Park is a public-facing starter-site framework repo for reusable web layouts.
 
+License: [MIT](./LICENSE)
+
 The repo is organized around two boundaries:
 
 - `packages/` for shared design-system and framework code
@@ -18,6 +20,8 @@ Current starter implementations:
 - `sites/review-studio-static/` for a framework-neutral review starter
 - `sites/mission-control-jinja/` for a generated proof family created from the new scaffold workflow
 - `sites/mission-control-static/` for the matching framework-neutral generated proof family
+- `sites/release-hub-jinja/` for a release-readiness and approvals starter generated from a family spec
+- `sites/release-hub-static/` for the matching framework-neutral release starter
 
 Default local workflow:
 
@@ -25,6 +29,7 @@ Default local workflow:
 - use small repo-local preview scripts under `scripts/`
 - use the root control-plane commands in `scripts/theme-park.py`
 - use Playwright for live screenshot capture
+- store reusable starter-family specs under `families/`
 
 ## Goals
 
@@ -41,6 +46,7 @@ Default local workflow:
 - [RUNBOOKS.md](./RUNBOOKS.md)
 - [docs/preview-workflows.md](./docs/preview-workflows.md)
 - [docs/starter-catalog.md](./docs/starter-catalog.md)
+- [docs/exports.md](./docs/exports.md)
 
 ## Preview Commands
 
@@ -57,7 +63,10 @@ scripts/preview-catalog.sh
 python3 scripts/theme-park.py build-static
 python3 scripts/theme-park.py build-catalog
 python3 scripts/theme-park.py starter-copy --source operations-shell-jinja --dest your-new-starter
-python3 scripts/theme-park.py family-create --seed-family operations --family your-family --site-slug your-site
+python3 scripts/theme-park.py family-spec-init --output families/your-family.json
+python3 scripts/theme-park.py family-create --config families/your-family.json
+python3 scripts/theme-park.py family-sync --config families/your-family.json
+python3 scripts/theme-park.py starter-export --starter release-hub-jinja
 npm install
 npx playwright install chromium
 npm run catalog:refresh

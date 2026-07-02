@@ -87,6 +87,13 @@ Build static output, capture live screenshots, and refresh the control-plane cat
 npm run catalog:refresh
 ```
 
+To recapture only a changed family or starter:
+
+```bash
+node scripts/capture-previews.mjs --starter mission-control-jinja
+node scripts/capture-previews.mjs --starter release-hub-static
+```
+
 Prerequisites:
 
 ```bash

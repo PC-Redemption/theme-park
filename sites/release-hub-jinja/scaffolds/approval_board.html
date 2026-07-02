@@ -1,0 +1,16 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/cards.html" import status_card %}
+{% from "scaffolds/_helpers.html" import review_conventions, reference_links %}
+{% block content %}
+{{ alert("Starter scaffold only", "This approval board is placeholder-safe starter content with no real signoff actions connected.", "warning") }}
+{{ reference_links(reference_set) }}
+<section class="tp-section-stack">
+  {{ review_conventions(contract) }}
+  <div class="tp-card-grid">
+    {{ status_card("Pending", "3 gates", "warning") }}
+    {{ status_card("Approved", "7 gates", "success") }}
+    {{ status_card("Escalations", "1 follow-up", "info") }}
+  </div>
+</section>
+{% endblock %}

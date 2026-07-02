@@ -1,0 +1,16 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/cards.html" import status_card %}
+{% from "scaffolds/_helpers.html" import review_conventions, reference_links %}
+{% block content %}
+{{ alert("Starter scaffold only", "This queue is placeholder-safe starter content with no real review feed connected.", "warning") }}
+{{ reference_links(reference_set) }}
+<section class="tp-section-stack">
+  {{ review_conventions(contract) }}
+  <div class="tp-card-grid">
+    {{ status_card("Ready", "18 items", "info") }}
+    {{ status_card("Blocked", "2 items", "warning") }}
+    {{ status_card("Assigned", "5 reviewers", "success") }}
+  </div>
+</section>
+{% endblock %}

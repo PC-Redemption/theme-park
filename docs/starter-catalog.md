@@ -70,6 +70,20 @@ npm run catalog:refresh
 - strengths: plain HTML delivery, documentation previews, starter demos, simple shell walkthroughs
 - preview: `scripts/preview-starter.sh mission-control-static`
 
+## Release Hub Family
+
+### `release-hub-jinja`
+
+- generated from the `review` seed family through a reusable family spec
+- strengths: review queues, evidence bundles, approval boards, release summaries
+- preview: `scripts/preview-starter.sh release-hub-jinja`
+
+### `release-hub-static`
+
+- generated from the `review` seed family through a reusable family spec
+- strengths: review queues, evidence bundles, approval boards, release summaries
+- preview: `scripts/preview-starter.sh release-hub-static`
+
 ## Shared Layer
 
 All four starters consume the shared design system in:
@@ -107,3 +121,9 @@ Starter and family scaffolds are created from the root control plane by:
 
 - `python3 scripts/theme-park.py starter-copy`
 - `python3 scripts/theme-park.py family-create`
+- `python3 scripts/theme-park.py family-spec-init`
+- `python3 scripts/theme-park.py family-sync`
+
+Reusable family specs live in:
+
+- `families/*.json`
