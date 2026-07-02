@@ -20,13 +20,13 @@ npm run catalog:refresh
 
 - runtime-backed Jinja starter
 - strengths: dashboards, list/detail workspaces, workflow review, monitoring, reference browsing, result pages
-- preview: `scripts/preview-jinja.sh`
+- preview: `scripts/preview-starter.sh operations-shell-jinja`
 
 ### `operations-shell-static`
 
 - framework-neutral static starter
 - strengths: simple shell demos, documentation previews, plain HTML starter delivery
-- preview: `scripts/preview-static.sh`
+- preview: `scripts/preview-starter.sh operations-shell-static`
 
 ## Settings Family
 
@@ -34,13 +34,13 @@ npm run catalog:refresh
 
 - runtime-backed Jinja starter
 - strengths: health review, global preferences, user administration, event audit pages
-- preview: `scripts/preview-settings-jinja.sh`
+- preview: `scripts/preview-starter.sh settings-portal-jinja`
 
 ### `settings-portal-static`
 
 - framework-neutral static starter
 - strengths: admin portal demos, table-heavy settings pages, static previews of configuration surfaces
-- preview: `scripts/preview-settings-static.sh`
+- preview: `scripts/preview-starter.sh settings-portal-static`
 
 ## Review Family
 
@@ -48,13 +48,13 @@ npm run catalog:refresh
 
 - runtime-backed Jinja starter
 - strengths: review queues, evidence bundles, approval boards, release summaries
-- preview: `scripts/preview-review-jinja.sh`
+- preview: `scripts/preview-starter.sh review-studio-jinja`
 
 ### `review-studio-static`
 
 - framework-neutral static starter
 - strengths: queue demos, evidence layouts, approval boards, release summary surfaces
-- preview: `scripts/preview-review-static.sh`
+- preview: `scripts/preview-starter.sh review-studio-static`
 
 ## Mission Control Family
 

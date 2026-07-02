@@ -157,17 +157,17 @@
     }
 
     const copySource = byId("builder-copy-source")?.value || catalogData.starters[0]?.key || "";
-    const copyDest = byId("builder-copy-dest")?.value || "mission-control-jinja";
-    const copyName = byId("builder-copy-name")?.value || "Mission Control Jinja";
+    const copyDest = byId("builder-copy-dest")?.value || "example-starter-jinja";
+    const copyName = byId("builder-copy-name")?.value || "Example Starter Jinja";
     const copyCommand = byId("builder-copy-command");
     if (copyCommand) {
       copyCommand.textContent = "python3 scripts/theme-park.py starter-copy --source " + copySource + " --dest " + copyDest + ' --name "' + copyName + '"';
     }
 
     const familySeed = byId("builder-family-seed")?.value || Object.keys(catalogData.families)[0] || "operations";
-    const familySlug = byId("builder-family-slug")?.value || "mission-control";
-    const familySite = byId("builder-family-site")?.value || "mission-control";
-    const familyName = byId("builder-family-name")?.value || "Mission Control";
+    const familySlug = byId("builder-family-slug")?.value || "starter-family";
+    const familySite = byId("builder-family-site")?.value || "starter-site";
+    const familyName = byId("builder-family-name")?.value || "Example Starter Family";
     const familyCommand = byId("builder-family-command");
     if (familyCommand) {
       familyCommand.textContent = "python3 scripts/theme-park.py family-create --seed-family " + familySeed + " --family " + familySlug + " --site-slug " + familySite + ' --display-name "' + familyName + '"';

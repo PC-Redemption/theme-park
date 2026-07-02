@@ -47,6 +47,7 @@ Default local workflow:
 - [docs/ai-workflows.md](./docs/ai-workflows.md)
 - [docs/ai-guardrails.md](./docs/ai-guardrails.md)
 - [docs/prompt-recipes.md](./docs/prompt-recipes.md)
+- [docs/reference/README.md](./docs/reference/README.md)
 
 ## Preview Commands
 

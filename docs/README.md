@@ -12,9 +12,22 @@ This directory holds public-facing documentation for consuming and extending The
 - [ai-guardrails.md](./ai-guardrails.md) for safe edit rules when using an AI agent
 - [prompt-recipes.md](./prompt-recipes.md) for copy-paste prompts
 
+## Reference Docs
+
+- [reference/README.md](./reference/README.md) for extraction provenance and source-analysis materials
+
 ## Repo Shape
 
 - `packages/` contains the shared design system and integration helpers
 - `sites/` contains isolated starter implementations
 - `families/` contains reusable family-generation specs
 - `catalog/` contains the root control plane and live preview catalog
+
+## Package Split
+
+Two similarly named package paths are intentional:
+
+- `packages/design-system/` holds shared front-end assets such as CSS, JavaScript, tokens, and Jinja templates
+- `packages/design_system/` holds Python importable integration helpers
+
+The hyphenated path is for repo assets. The underscored path is for Python module imports.
