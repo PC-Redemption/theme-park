@@ -31,3 +31,4 @@ coverage/
 # Private source imports and scratch work
 imports/
 scratch/
+maintainers-private/

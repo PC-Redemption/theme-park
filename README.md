@@ -38,15 +38,15 @@ Default local workflow:
 - make branding, navigation, permissions, and routes configurable
 - support adding more starters without restructuring the repo
 
-## Current Contents
+## Public Docs
 
-- [STARTER_BRIEF.md](./STARTER_BRIEF.md)
-- [ROADMAP.md](./ROADMAP.md)
-- [MILESTONES.md](./MILESTONES.md)
-- [RUNBOOKS.md](./RUNBOOKS.md)
+- [docs/README.md](./docs/README.md)
 - [docs/preview-workflows.md](./docs/preview-workflows.md)
 - [docs/starter-catalog.md](./docs/starter-catalog.md)
 - [docs/exports.md](./docs/exports.md)
+- [docs/ai-workflows.md](./docs/ai-workflows.md)
+- [docs/ai-guardrails.md](./docs/ai-guardrails.md)
+- [docs/prompt-recipes.md](./docs/prompt-recipes.md)
 
 ## Preview Commands
 
@@ -78,10 +78,3 @@ npm run catalog:refresh
 - do not commit private hostnames, internal paths, credentials, or environment-specific secrets
 - keep shared framework code out of starter-site directories unless it is truly site-local
 - keep each starter site in its own clearly named folder under `sites/`
-
-## Next Steps
-
-1. keep pressure-testing family generation against more distinct information architectures
-2. add starter onboarding templates for non-Python runtimes beyond static HTML
-3. promote more repeated site scaffolds into explicit shared contracts
-4. add publish-ready remote and release automation once the public repo destination is chosen
