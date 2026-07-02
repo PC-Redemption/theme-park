@@ -1,0 +1,28 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "scaffolds/_helpers.html" import admin_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This event page is placeholder-safe starter content with no real event feed connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+  <section class="tp-section-stack">
+    {{ admin_conventions(contract) }}
+    <section class="tp-card">
+      <strong>Filters</strong>
+      <div class="tp-form-grid">
+        <label class="tp-form-field"><span>Source</span><input type="text" value="sample-source"></label>
+        <label class="tp-form-field"><span>Collection</span><input type="text" value="demo-collection"></label>
+      </div>
+    </section>
+    <section class="tp-table-shell">
+      <div class="tp-action-bar"><strong>Events</strong><span class="tp-muted">Read-mostly audit view</span></div>
+      <table class="tp-data-table">
+        <thead><tr><th>Timestamp</th><th>Event</th><th>Collection</th><th>Source</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>2026-07-02T00:00:00Z</td><td><strong>Import Complete</strong><br><small>job.complete</small></td><td>demo-collection</td><td>sample-source</td><td>Placeholder audit note</td></tr>
+          <tr><td>2026-07-02T00:15:00Z</td><td><strong>Config Changed</strong><br><small>settings.change</small></td><td>shared</td><td>admin-ui</td><td>Threshold update pending review</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+{% endblock %}

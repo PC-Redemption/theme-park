@@ -1,0 +1,39 @@
+{% from "components/status.html" import status_indicator %}
+
+{% macro data_view_contract(data_view) -%}
+  <section class="tp-table-shell" aria-label="{{ data_view.title }}">
+    <div class="tp-action-bar">
+      <div>
+        <strong>{{ data_view.title }}</strong>
+        <p class="tp-subtitle">{{ data_view.context }}</p>
+      </div>
+      <span class="tp-muted">{{ data_view.freshness }}</span>
+    </div>
+    <table class="tp-data-table">
+      <thead>
+        <tr>
+          <th>Record</th>
+          <th>Status</th>
+          <th>Updated</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in data_view.rows %}
+          <tr>
+            <td><strong>{{ row.id }}</strong> {{ row.name }}</td>
+            <td>{{ status_indicator(row.status, True) }}</td>
+            <td>{{ row.updated }}</td>
+            <td>{{ row.action }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+{%- endmacro %}
+
+{% macro table_empty(label="No rows") -%}
+  <div class="tp-empty-state" data-table-state="placeholder">
+    <strong>{{ label }}</strong>
+  </div>
+{%- endmacro %}

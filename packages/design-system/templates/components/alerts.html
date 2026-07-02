@@ -1,0 +1,6 @@
+{% macro alert(title, message, tone="info") -%}
+  <section class="tp-alert {{ tone }}" role="status">
+    <strong>{{ title }}</strong>
+    <p>{{ message }}</p>
+  </section>
+{%- endmacro %}

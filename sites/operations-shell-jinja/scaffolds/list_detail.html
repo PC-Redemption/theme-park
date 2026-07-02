@@ -1,0 +1,38 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/badges.html" import badge %}
+{% from "components/cards.html" import contract_card %}
+{% from "components/tables.html" import table_empty %}
+{% from "scaffolds/_helpers.html" import scaffold_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This list/detail view is placeholder-safe starter content with no connected records.", "warning") }}
+  {{ reference_links(reference_set) }}
+
+  <section class="tp-section-stack" aria-labelledby="list-detail-title">
+    <div class="tp-content-head">
+      <div>
+        <p class="tp-kicker">Starter scaffold</p>
+        <h2 id="list-detail-title">List Detail Workspace</h2>
+      </div>
+      {{ badge("starter pattern", "neutral") }}
+    </div>
+
+    {{ scaffold_conventions(contract) }}
+
+    <div class="tp-action-bar">
+      <span class="tp-badge">Search placeholder</span>
+      <span class="tp-badge">Filter placeholder</span>
+      <span class="tp-badge">Sort placeholder</span>
+    </div>
+
+    <div class="tp-card-grid" style="grid-template-columns: minmax(320px, 1.25fr) minmax(260px, 0.75fr);">
+      <div>
+        {{ table_empty("Placeholder record list. Future data should be injected by the consuming site.") }}
+      </div>
+      <aside class="tp-card" aria-label="Placeholder detail drawer">
+        {{ contract_card("Selected Record", "Use this region for read-only record context before edits move into actions or modals.", "Drawer") }}
+      </aside>
+    </div>
+  </section>
+{% endblock %}

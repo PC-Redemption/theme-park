@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="green">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foundation Health</title>
+    <link rel="stylesheet" href="../../../packages/design-system/styles/shell.css">
+    <script defer src="../../../packages/design-system/scripts/shell.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="./index.html"><img class="tp-brand-logo" src="../static/logo.svg" alt="Settings Portal Static logo"><span>Settings Portal Static</span></a>
+        <nav aria-label="Breadcrumb"><span class="tp-muted">Home / Foundation Health</span></nav>
+        <div class="tp-action-bar"><button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button></div>
+      </header>
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar"><strong>Admin Navigation</strong></div>
+          <nav class="tp-nav-links" aria-label="Primary"><a class="active" href="./health.html">Health</a><a class="" href="./settings.html">Settings</a><a class="" href="./users.html">Users</a><a class="" href="./events.html">Events</a></nav>
+        </aside>
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div><p class="tp-kicker">Static starter</p><h1>Foundation Health</h1><p class="tp-subtitle">Service, dependency, and status overview.</p></div>
+            <div class="tp-action-bar"><span class="tp-badge">Health</span></div>
+          </div>
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-card-grid"><article class="tp-card success"><span class="tp-muted">Status</span><strong>Healthy</strong></article><article class="tp-card info"><span class="tp-muted">Checks</span><strong>12 sample checks</strong></article><article class="tp-card warning"><span class="tp-muted">Attention</span><strong>0 open items</strong></article></section><section class="tp-table-shell"><div class="tp-action-bar"><strong>Services</strong><span class="tp-muted">Last check: placeholder</span></div><table class="tp-data-table"><thead><tr><th>Service</th><th>Status</th><th>Direct</th><th>Front Door</th></tr></thead><tbody><tr><td>API Gateway</td><td>healthy</td><td>200</td><td>200</td></tr><tr><td>Scheduler</td><td>healthy</td><td>200</td><td>200</td></tr></tbody></table></section>
+          </div>
+        </main>
+      </div>
+      <footer class="tp-footer"><span>Starter: settings-portal-static</span><span>Page: health</span></footer>
+    </div>
+  </body>
+</html>

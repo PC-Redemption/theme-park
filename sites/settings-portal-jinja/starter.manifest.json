@@ -1,0 +1,23 @@
+{
+  "key": "settings-portal-jinja",
+  "name": "Settings Portal Jinja",
+  "family": "settings",
+  "runtime": "jinja",
+  "summary": "Runtime-backed starter for health review, global preferences, user administration, and event audit surfaces.",
+  "strengths": [
+    "health review",
+    "global preferences",
+    "user administration",
+    "event audit",
+    "table-heavy admin pages"
+  ],
+  "preview": {
+    "script": "scripts/preview-settings-jinja.sh",
+    "url": "http://127.0.0.1:8000/health"
+  },
+  "paths": {
+    "site_dir": "sites/settings-portal-jinja",
+    "config": "sites/settings-portal-jinja/app_config",
+    "routes": "sites/settings-portal-jinja/routes"
+  }
+}

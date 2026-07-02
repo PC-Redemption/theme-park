@@ -1,0 +1,24 @@
+{
+  "key": "operations-shell-jinja",
+  "name": "Operations Shell Jinja",
+  "family": "operations",
+  "runtime": "jinja",
+  "summary": "Runtime-backed starter for dashboards, workflows, monitoring, and result-driven operational surfaces.",
+  "strengths": [
+    "dashboards",
+    "list-detail workspaces",
+    "workflow review",
+    "monitoring",
+    "reference browsing",
+    "results pages"
+  ],
+  "preview": {
+    "script": "scripts/preview-jinja.sh",
+    "url": "http://127.0.0.1:8000/dashboard"
+  },
+  "paths": {
+    "site_dir": "sites/operations-shell-jinja",
+    "config": "sites/operations-shell-jinja/app_config",
+    "routes": "sites/operations-shell-jinja/routes"
+  }
+}

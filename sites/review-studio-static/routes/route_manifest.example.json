@@ -1,0 +1,8 @@
+{
+  "pages": [
+    { "key": "queue", "path": "/queue", "file": "templates/queue.html" },
+    { "key": "evidence", "path": "/evidence", "file": "templates/evidence.html" },
+    { "key": "approvals", "path": "/approvals", "file": "templates/approvals.html" },
+    { "key": "release", "path": "/release", "file": "templates/release.html" }
+  ]
+}

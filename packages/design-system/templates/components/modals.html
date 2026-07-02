@@ -1,0 +1,6 @@
+{% macro modal_placeholder(title="Modal placeholder", body="Wire real content in the consuming starter site.") -%}
+  <div class="tp-card" role="dialog" aria-label="{{ title }}">
+    <strong>{{ title }}</strong>
+    <p>{{ body }}</p>
+  </div>
+{%- endmacro %}

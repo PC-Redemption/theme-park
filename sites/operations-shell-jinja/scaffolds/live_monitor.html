@@ -1,0 +1,33 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/badges.html" import badge %}
+{% from "components/cards.html" import contract_card, status_card %}
+{% from "scaffolds/_helpers.html" import scaffold_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This live monitor is placeholder-safe starter content with no live feeds or sensors connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+
+  <section class="tp-section-stack" aria-labelledby="live-monitor-title">
+    <div class="tp-content-head">
+      <div>
+        <p class="tp-kicker">Starter scaffold</p>
+        <h2 id="live-monitor-title">Live Monitor</h2>
+      </div>
+      {{ badge("stale state required", "warning") }}
+    </div>
+
+    {{ scaffold_conventions(contract) }}
+
+    <div class="tp-card-grid">
+      {{ status_card("Connection", "Placeholder", "info") }}
+      {{ status_card("Freshness", "No live feed", "warning") }}
+      {{ status_card("Unsafe Controls", "Disabled", "success") }}
+    </div>
+
+    <div class="tp-card-grid">
+      {{ contract_card("Trend Panel", "Use a bounded chart or data region with explicit stale or disconnected state.", "Monitor") }}
+      {{ contract_card("Current Readings", "Use compact confirmed values and freshness timestamps.", "Monitor") }}
+    </div>
+  </section>
+{% endblock %}

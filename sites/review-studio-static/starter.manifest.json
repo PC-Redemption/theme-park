@@ -1,0 +1,17 @@
+{
+  "key": "review-studio-static",
+  "name": "Review Studio Static",
+  "family": "review",
+  "runtime": "static",
+  "summary": "Framework-neutral starter for queues, evidence, approvals, and release summaries.",
+  "strengths": ["review queues", "evidence bundles", "approval boards", "release summaries"],
+  "preview": {
+    "script": "STARTER=review-studio-static scripts/preview-static.sh",
+    "url": "http://127.0.0.1:8000/sites/review-studio-static/templates/index.html"
+  },
+  "paths": {
+    "site_dir": "sites/review-studio-static",
+    "config": "sites/review-studio-static/app_config",
+    "routes": "sites/review-studio-static/routes"
+  }
+}

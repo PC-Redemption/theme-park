@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% from "components/badges.html" import badge %}
+
+{% block body %}
+  <div class="tp-shell" data-tp-shell>
+    <header class="tp-topbar">
+      <a class="tp-brand" href="{{ shell.brand.home_url | default('/') }}">
+        {% if shell.brand.logo_path %}
+          <img class="tp-brand-logo" src="{{ shell.brand.logo_path }}" alt="{{ shell.brand.name }}">
+        {% endif %}
+        <span>{{ shell.brand.name }}</span>
+      </a>
+
+      <nav aria-label="Breadcrumb">
+        {% for crumb in shell.breadcrumb %}
+          <span class="{{ 'tp-muted' if not loop.last else '' }}">
+            {% if crumb.url and not loop.last %}
+              <a href="{{ crumb.url }}">{{ crumb.label }}</a>
+            {% else %}
+              {{ crumb.label }}
+            {% endif %}
+            {% if not loop.last %} / {% endif %}
+          </span>
+        {% endfor %}
+      </nav>
+
+      <div class="tp-action-bar">
+        {% if shell.theme_menu %}
+          <div data-tp-menu-root style="position: relative;">
+            <button
+              class="tp-button secondary"
+              type="button"
+              data-tp-menu-toggle
+              aria-controls="tp-theme-panel"
+              aria-expanded="false"
+            >
+              Theme
+            </button>
+            <div id="tp-theme-panel" class="tp-menu-panel" data-tp-menu-panel hidden>
+              <p><strong>Mode</strong></p>
+              <div class="tp-action-bar">
+                {% for mode in theme.modes %}
+                  <button class="tp-button secondary" type="button" data-tp-theme-mode="{{ mode }}" aria-pressed="{{ 'true' if mode == theme.default_mode else 'false' }}">{{ mode | title }}</button>
+                {% endfor %}
+              </div>
+              <p><strong>Color</strong></p>
+              <div class="tp-action-bar">
+                {% for color in theme.colors %}
+                  <button class="tp-button secondary" type="button" data-tp-theme-color="{{ color }}" aria-pressed="{{ 'true' if color == theme.default_color else 'false' }}">{{ color | title }}</button>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        <button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button>
+      </div>
+    </header>
+
+    <div class="tp-shell-grid">
+      <aside class="tp-sidebar">
+        <div class="tp-sidebar-toolbar">
+          <strong>{{ shell.sidebar_title | default('Navigation') }}</strong>
+        </div>
+        <nav class="tp-nav-links" aria-label="{{ shell.sidebar_title | default('Navigation') }}">
+          {% for item in shell.navigation %}
+            <a href="{{ item.url }}" class="{{ 'active' if item.key == active_nav else '' }}">{{ item.label }}</a>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <main class="tp-main">
+        <div class="tp-content-head">
+          <div>
+            {% if page.kicker %}<p class="tp-kicker">{{ page.kicker }}</p>{% endif %}
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}<p class="tp-subtitle">{{ page.subtitle }}</p>{% endif %}
+          </div>
+          <div class="tp-action-bar">
+            {% for item in page.badges | default([]) %}
+              {{ badge(item.label, item.tone) }}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="tp-content-body">
+          {% block content %}{% endblock %}
+        </div>
+      </main>
+    </div>
+
+    <div id="tp-toast-region" class="tp-toast-region" aria-live="polite" aria-atomic="true"></div>
+    <footer class="tp-footer">
+      {% for item in shell.footer_items | default([]) %}
+        <span>{{ item }}</span>
+      {% endfor %}
+    </footer>
+  </div>
+{% endblock %}

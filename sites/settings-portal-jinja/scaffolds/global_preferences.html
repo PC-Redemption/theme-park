@@ -1,0 +1,24 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/buttons.html" import action_button %}
+{% from "scaffolds/_helpers.html" import admin_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This settings page is placeholder-safe starter content with no writes connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+  <section class="tp-section-stack">
+    {{ admin_conventions(contract) }}
+    <section class="tp-card">
+      <strong>Display Defaults</strong>
+      <div class="tp-form-grid">
+        <label class="tp-form-field"><span>Time zone</span><select><option>UTC</option><option>America/Los_Angeles</option></select></label>
+        <label class="tp-form-field"><span>Date format</span><select><option>YYYY-MM-DD</option><option>MM/DD/YYYY</option></select></label>
+        <label class="tp-form-field"><span>Time format</span><select><option>24 hour</option><option>12 hour</option></select></label>
+        <label class="tp-form-field"><span>Quality floor</span><input type="number" value="-20"></label>
+      </div>
+      <div class="tp-action-bar" style="margin-top: 16px;">
+        {{ action_button("Save defaults", "Global preferences save placeholder") }}
+      </div>
+    </section>
+  </section>
+{% endblock %}

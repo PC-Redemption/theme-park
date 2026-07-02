@@ -1,0 +1,161 @@
+{
+  "generated_from": "sites/*/starter.manifest.json",
+  "starter_count": 6,
+  "families": {
+    "operations": [
+      "operations-shell-jinja",
+      "operations-shell-static"
+    ],
+    "review": [
+      "review-studio-jinja",
+      "review-studio-static"
+    ],
+    "settings": [
+      "settings-portal-jinja",
+      "settings-portal-static"
+    ]
+  },
+  "starters": [
+    {
+      "key": "operations-shell-jinja",
+      "name": "Operations Shell Jinja",
+      "family": "operations",
+      "runtime": "jinja",
+      "summary": "Runtime-backed starter for dashboards, workflows, monitoring, and result-driven operational surfaces.",
+      "strengths": [
+        "dashboards",
+        "list-detail workspaces",
+        "workflow review",
+        "monitoring",
+        "reference browsing",
+        "results pages"
+      ],
+      "preview": {
+        "script": "scripts/preview-jinja.sh",
+        "url": "http://127.0.0.1:8000/dashboard",
+        "image": "./previews/operations-shell-jinja.svg"
+      },
+      "paths": {
+        "site_dir": "sites/operations-shell-jinja",
+        "config": "sites/operations-shell-jinja/app_config",
+        "routes": "sites/operations-shell-jinja/routes"
+      }
+    },
+    {
+      "key": "operations-shell-static",
+      "name": "Operations Shell Static",
+      "family": "operations",
+      "runtime": "static",
+      "summary": "Framework-neutral starter for shell demos, documentation previews, and lightweight operational layouts.",
+      "strengths": [
+        "plain HTML delivery",
+        "documentation previews",
+        "starter demos",
+        "simple shell walkthroughs"
+      ],
+      "preview": {
+        "script": "scripts/preview-static.sh",
+        "url": "http://127.0.0.1:8000/sites/operations-shell-static/templates/index.html",
+        "image": "./previews/operations-shell-static.svg"
+      },
+      "paths": {
+        "site_dir": "sites/operations-shell-static",
+        "config": "sites/operations-shell-static/app_config",
+        "routes": "sites/operations-shell-static/routes"
+      }
+    },
+    {
+      "key": "review-studio-jinja",
+      "name": "Review Studio Jinja",
+      "family": "review",
+      "runtime": "jinja",
+      "summary": "Runtime-backed starter for review queues, evidence bundles, approval boards, and release summaries.",
+      "strengths": [
+        "review queues",
+        "evidence bundles",
+        "approval boards",
+        "release summaries"
+      ],
+      "preview": {
+        "script": "STARTER=review-studio-jinja scripts/preview-jinja.sh",
+        "url": "http://127.0.0.1:8000/queue",
+        "image": "./previews/review-studio-jinja.svg"
+      },
+      "paths": {
+        "site_dir": "sites/review-studio-jinja",
+        "config": "sites/review-studio-jinja/app_config",
+        "routes": "sites/review-studio-jinja/routes"
+      }
+    },
+    {
+      "key": "review-studio-static",
+      "name": "Review Studio Static",
+      "family": "review",
+      "runtime": "static",
+      "summary": "Framework-neutral starter for queues, evidence, approvals, and release summaries.",
+      "strengths": [
+        "review queues",
+        "evidence bundles",
+        "approval boards",
+        "release summaries"
+      ],
+      "preview": {
+        "script": "STARTER=review-studio-static scripts/preview-static.sh",
+        "url": "http://127.0.0.1:8000/sites/review-studio-static/templates/index.html",
+        "image": "./previews/review-studio-static.svg"
+      },
+      "paths": {
+        "site_dir": "sites/review-studio-static",
+        "config": "sites/review-studio-static/app_config",
+        "routes": "sites/review-studio-static/routes"
+      }
+    },
+    {
+      "key": "settings-portal-jinja",
+      "name": "Settings Portal Jinja",
+      "family": "settings",
+      "runtime": "jinja",
+      "summary": "Runtime-backed starter for health review, global preferences, user administration, and event audit surfaces.",
+      "strengths": [
+        "health review",
+        "global preferences",
+        "user administration",
+        "event audit",
+        "table-heavy admin pages"
+      ],
+      "preview": {
+        "script": "scripts/preview-settings-jinja.sh",
+        "url": "http://127.0.0.1:8000/health",
+        "image": "./previews/settings-portal-jinja.svg"
+      },
+      "paths": {
+        "site_dir": "sites/settings-portal-jinja",
+        "config": "sites/settings-portal-jinja/app_config",
+        "routes": "sites/settings-portal-jinja/routes"
+      }
+    },
+    {
+      "key": "settings-portal-static",
+      "name": "Settings Portal Static",
+      "family": "settings",
+      "runtime": "static",
+      "summary": "Framework-neutral starter for admin portal demos, configuration pages, and audit-friendly tables.",
+      "strengths": [
+        "admin portal demos",
+        "configuration pages",
+        "audit-friendly tables",
+        "plain HTML delivery"
+      ],
+      "preview": {
+        "script": "scripts/preview-settings-static.sh",
+        "url": "http://127.0.0.1:8000/sites/settings-portal-static/templates/index.html",
+        "image": "./previews/settings-portal-static.svg"
+      },
+      "paths": {
+        "site_dir": "sites/settings-portal-static",
+        "config": "sites/settings-portal-static/app_config",
+        "routes": "sites/settings-portal-static/routes"
+      }
+    }
+  ]
+}

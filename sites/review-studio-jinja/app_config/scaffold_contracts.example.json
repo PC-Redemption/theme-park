@@ -1,0 +1,86 @@
+{
+  "queue_overview": {
+    "contract": {
+      "title": "Review Queue",
+      "summary": "Shared starter rules for queue-first review and triage surfaces.",
+      "statuses": [
+        { "label": "Ready", "description": "Items are available for review", "tone": "info" },
+        { "label": "Blocked", "description": "Follow-up evidence is required", "tone": "warning" }
+      ],
+      "content_frame": "Show priority items, aging, and next review actions in one glance.",
+      "data_view": "Keep queue counts and row actions visible together.",
+      "form_action": "Use deliberate triage and assignment actions."
+    },
+    "reference_set": {
+      "title": "Queue References",
+      "summary": "Pattern hints for triage and review queues.",
+      "links": [
+        { "label": "Priority view", "summary": "Most urgent items first." },
+        { "label": "Assignment cues", "summary": "Ownership and next action." }
+      ]
+    }
+  },
+  "evidence_bundle": {
+    "contract": {
+      "title": "Evidence Bundle",
+      "summary": "Shared starter rules for side-by-side evidence, references, and notes.",
+      "statuses": [
+        { "label": "Attached", "description": "Evidence is present", "tone": "success" },
+        { "label": "Incomplete", "description": "Supporting material is missing", "tone": "warning" }
+      ],
+      "content_frame": "Keep source evidence, notes, and selected context in one stable view.",
+      "data_view": "Make supporting documents and review context easy to compare.",
+      "form_action": "Favor append-only notes and deliberate evidence acceptance."
+    },
+    "reference_set": {
+      "title": "Evidence References",
+      "summary": "Pattern hints for review bundles and supporting material.",
+      "links": [
+        { "label": "Evidence rail", "summary": "Selected artifacts and attachments." },
+        { "label": "Notes panel", "summary": "Review findings and commentary." }
+      ]
+    }
+  },
+  "approval_board": {
+    "contract": {
+      "title": "Approval Board",
+      "summary": "Shared starter rules for gate checks, signoff state, and escalation paths.",
+      "statuses": [
+        { "label": "Pending", "description": "Signoff is still needed", "tone": "warning" },
+        { "label": "Approved", "description": "Gate passed", "tone": "success" }
+      ],
+      "content_frame": "Show approval state, blockers, and handoff actions without burying them.",
+      "data_view": "Make approver, time, and state visible across the board.",
+      "form_action": "Require explicit review and confirm states for approvals."
+    },
+    "reference_set": {
+      "title": "Approval References",
+      "summary": "Pattern hints for signoff and decision boards.",
+      "links": [
+        { "label": "Gate state", "summary": "Pass, pending, and blocked visibility." },
+        { "label": "Handoffs", "summary": "Escalation and completion signals." }
+      ]
+    }
+  },
+  "release_summary": {
+    "contract": {
+      "title": "Release Summary",
+      "summary": "Shared starter rules for release-ready reporting, evidence summaries, and signoff output.",
+      "statuses": [
+        { "label": "Draft", "description": "Summary is still in progress", "tone": "info" },
+        { "label": "Ready", "description": "Release summary is prepared", "tone": "success" }
+      ],
+      "content_frame": "Lead with readiness, outcome, and linked evidence.",
+      "data_view": "Attach release notes, decisions, and evidence in one export-friendly surface.",
+      "form_action": "Use clear publish or export actions with final confirmation."
+    },
+    "reference_set": {
+      "title": "Release References",
+      "summary": "Pattern hints for review summaries and release handoff pages.",
+      "links": [
+        { "label": "Release notes", "summary": "Outcome and summary narrative." },
+        { "label": "Evidence links", "summary": "Supporting proof and attachments." }
+      ]
+    }
+  }
+}

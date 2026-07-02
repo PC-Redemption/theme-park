@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="plum">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Approval Board</title>
+    <link rel="stylesheet" href="../../../packages/design-system/styles/shell.css">
+    <script defer src="../../../packages/design-system/scripts/shell.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="./index.html"><img class="tp-brand-logo" src="../static/logo.svg" alt="Review Studio Static logo"><span>Review Studio Static</span></a>
+        <nav aria-label="Breadcrumb"><span class="tp-muted">Home / Approval Board</span></nav>
+        <div class="tp-action-bar"><button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button></div>
+      </header>
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar"><strong>Review Navigation</strong></div>
+          <nav class="tp-nav-links" aria-label="Primary"><a class="" href="./queue.html">Queue</a><a class="" href="./evidence.html">Evidence</a><a class="active" href="./approvals.html">Approvals</a><a class="" href="./release.html">Release</a></nav>
+        </aside>
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div><p class="tp-kicker">Static starter</p><h1>Approval Board</h1><p class="tp-subtitle">Gate checks, signoff state, and escalation paths.</p></div>
+            <div class="tp-action-bar"><span class="tp-badge">Approvals</span></div>
+          </div>
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-card-grid"><article class="tp-card warning"><span class="tp-muted">Pending</span><strong>3 gates</strong></article><article class="tp-card success"><span class="tp-muted">Approved</span><strong>7 gates</strong></article><article class="tp-card info"><span class="tp-muted">Escalations</span><strong>1 follow-up</strong></article></section>
+          </div>
+        </main>
+      </div>
+      <footer class="tp-footer"><span>Starter: review-studio-static</span><span>Page: approvals</span></footer>
+    </div>
+  </body>
+</html>

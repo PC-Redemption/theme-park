@@ -1,0 +1,22 @@
+{
+  "key": "operations-shell-static",
+  "name": "Operations Shell Static",
+  "family": "operations",
+  "runtime": "static",
+  "summary": "Framework-neutral starter for shell demos, documentation previews, and lightweight operational layouts.",
+  "strengths": [
+    "plain HTML delivery",
+    "documentation previews",
+    "starter demos",
+    "simple shell walkthroughs"
+  ],
+  "preview": {
+    "script": "scripts/preview-static.sh",
+    "url": "http://127.0.0.1:8000/sites/operations-shell-static/templates/index.html"
+  },
+  "paths": {
+    "site_dir": "sites/operations-shell-static",
+    "config": "sites/operations-shell-static/app_config",
+    "routes": "sites/operations-shell-static/routes"
+  }
+}

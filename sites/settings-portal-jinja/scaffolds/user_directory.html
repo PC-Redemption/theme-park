@@ -1,0 +1,27 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/cards.html" import status_card %}
+{% from "scaffolds/_helpers.html" import admin_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This user page is placeholder-safe starter content with no real accounts connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+  <section class="tp-section-stack">
+    {{ admin_conventions(contract) }}
+    <div class="tp-card-grid">
+      {{ status_card("Signed In", "Admin User", "info") }}
+      {{ status_card("Role", "Administrator", "success") }}
+      {{ status_card("Users", "8 sample users", "warning") }}
+    </div>
+    <section class="tp-table-shell">
+      <div class="tp-action-bar"><strong>Users</strong><span class="tp-badge">Admin only</span></div>
+      <table class="tp-data-table">
+        <thead><tr><th>User</th><th>Contact</th><th>Roles</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Avery Admin</strong><br><small>aadmin</small></td><td>avery@example.test</td><td>admin, reviewer</td><td>active</td></tr>
+          <tr><td><strong>Robin Reviewer</strong><br><small>rreview</small></td><td>robin@example.test</td><td>reviewer</td><td>active</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+{% endblock %}

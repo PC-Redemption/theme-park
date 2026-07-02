@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="blue">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Theme Park Catalog</title>
+    <link rel="stylesheet" href="../packages/design-system/styles/shell.css">
+    <script defer src="../packages/design-system/scripts/shell.js"></script>
+    <script defer src="./launcher.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="./index.html">
+          <span>Theme Park</span>
+        </a>
+        <nav aria-label="Breadcrumb">
+          <span class="tp-muted">Home / Starter Catalog</span>
+        </nav>
+        <div class="tp-action-bar">
+          <button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button>
+        </div>
+      </header>
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar">
+            <strong>Catalog</strong>
+          </div>
+          <nav class="tp-nav-links" aria-label="Catalog sections">
+            <a class="active" href="#all">All Starters</a>
+            <a href="#operations">Operations</a>
+            <a href="#settings">Settings</a>
+          </nav>
+        </aside>
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div>
+              <p class="tp-kicker">Root launcher</p>
+              <h1>Starter Catalog</h1>
+              <p class="tp-subtitle">Browse starter families, preview commands, runtimes, and strengths from one place.</p>
+            </div>
+            <div class="tp-action-bar">
+              <span class="tp-badge" id="starter-count">Loading</span>
+            </div>
+          </div>
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-card">
+              <strong>How to use this</strong>
+              <p class="tp-subtitle">Pick the closest family, choose static or Jinja, preview locally, then copy the starter into a new site directory before customizing site-local config and pages.</p>
+            </section>
+            <section class="tp-card">
+              <div class="tp-action-bar">
+                <strong>Find a starter</strong>
+                <span class="tp-muted">Search, filter, and compare</span>
+              </div>
+              <div class="tp-form-grid">
+                <label class="tp-form-field">
+                  <span>Search</span>
+                  <input id="catalog-search" type="text" placeholder="operations, settings, review, audit...">
+                </label>
+                <label class="tp-form-field">
+                  <span>Family</span>
+                  <select id="catalog-family">
+                    <option value="all">All families</option>
+                  </select>
+                </label>
+                <label class="tp-form-field">
+                  <span>Runtime</span>
+                  <select id="catalog-runtime">
+                    <option value="all">All runtimes</option>
+                    <option value="jinja">Jinja</option>
+                    <option value="static">Static</option>
+                  </select>
+                </label>
+              </div>
+            </section>
+            <section class="tp-card" id="all">
+              <div class="tp-action-bar">
+                <strong>All starters</strong>
+                <span class="tp-muted" id="family-count">Loading families</span>
+              </div>
+              <div class="tp-card-grid" id="starter-grid">
+                <article class="tp-card"><strong>Loading starter catalog...</strong></article>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+      <footer class="tp-footer">
+        <span>Catalog: root launcher</span>
+        <span>Data: starter manifests</span>
+      </footer>
+    </div>
+  </body>
+</html>

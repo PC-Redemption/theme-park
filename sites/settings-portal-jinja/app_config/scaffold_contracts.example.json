@@ -1,0 +1,86 @@
+{
+  "health_overview": {
+    "contract": {
+      "title": "Foundation Health",
+      "summary": "Shared starter rules for status review across services, stores, and foundational dependencies.",
+      "statuses": [
+        { "label": "Healthy", "description": "Core checks are passing", "tone": "success" },
+        { "label": "Attention", "description": "One or more checks need review", "tone": "warning" }
+      ],
+      "content_frame": "Use summary counts first, then drill into service and dependency tables.",
+      "data_view": "Show status, scope, and direct evidence close together.",
+      "form_action": "Prefer investigate and acknowledge actions over inline edits."
+    },
+    "reference_set": {
+      "title": "Health References",
+      "summary": "Pattern hints for service and dependency status pages.",
+      "links": [
+        { "label": "Services", "summary": "Status by service or subsystem." },
+        { "label": "Data stores", "summary": "Mounted files, databases, and dependencies." }
+      ]
+    }
+  },
+  "global_preferences": {
+    "contract": {
+      "title": "Global Preferences",
+      "summary": "Shared starter rules for global defaults, display settings, and review-before-save controls.",
+      "statuses": [
+        { "label": "Draft", "description": "Unsaved changes are present", "tone": "info" },
+        { "label": "Validated", "description": "Ready for confirmed save", "tone": "success" }
+      ],
+      "content_frame": "Group defaults into sections with clear preview and change-review hints.",
+      "data_view": "Use small preview panels near the form instead of separating context too far.",
+      "form_action": "Keep save actions explicit and role-aware."
+    },
+    "reference_set": {
+      "title": "Preference References",
+      "summary": "Pattern hints for defaults and shared settings.",
+      "links": [
+        { "label": "Display settings", "summary": "Time, format, and locale defaults." },
+        { "label": "Validation limits", "summary": "Shared guardrails and thresholds." }
+      ]
+    }
+  },
+  "user_directory": {
+    "contract": {
+      "title": "User Directory",
+      "summary": "Shared starter rules for account lists, role assignment, and admin-only actions.",
+      "statuses": [
+        { "label": "Active", "description": "Account is enabled", "tone": "success" },
+        { "label": "Review", "description": "Permissions or status should be checked", "tone": "warning" }
+      ],
+      "content_frame": "Keep summary counts and table actions visible together for fast administration.",
+      "data_view": "Favor clear columns for identity, contact, roles, and status.",
+      "form_action": "Restrict create and edit actions behind explicit admin paths."
+    },
+    "reference_set": {
+      "title": "User References",
+      "summary": "Pattern hints for account administration surfaces.",
+      "links": [
+        { "label": "Directory", "summary": "User list with status and role context." },
+        { "label": "Actions", "summary": "Create, edit, disable, and audit entry points." }
+      ]
+    }
+  },
+  "event_audit": {
+    "contract": {
+      "title": "Event Audit",
+      "summary": "Shared starter rules for event logs, filters, and read-mostly audit surfaces.",
+      "statuses": [
+        { "label": "Indexed", "description": "Events are available for review", "tone": "info" },
+        { "label": "Filtered", "description": "Audit filters are currently applied", "tone": "warning" }
+      ],
+      "content_frame": "Keep filters near the table and make context columns easy to scan.",
+      "data_view": "Show timestamp, category, source, and notes without hiding audit anchors.",
+      "form_action": "Prefer read-first workflows with explicit edit and delete gates."
+    },
+    "reference_set": {
+      "title": "Audit References",
+      "summary": "Pattern hints for log browsing and event review.",
+      "links": [
+        { "label": "Filter panel", "summary": "Fast narrowing by source or collection." },
+        { "label": "Audit table", "summary": "Timestamp, source, anchor, and notes." }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "key": "settings-portal-static",
+  "name": "Settings Portal Static",
+  "family": "settings",
+  "runtime": "static",
+  "summary": "Framework-neutral starter for admin portal demos, configuration pages, and audit-friendly tables.",
+  "strengths": [
+    "admin portal demos",
+    "configuration pages",
+    "audit-friendly tables",
+    "plain HTML delivery"
+  ],
+  "preview": {
+    "script": "scripts/preview-settings-static.sh",
+    "url": "http://127.0.0.1:8000/sites/settings-portal-static/templates/index.html"
+  },
+  "paths": {
+    "site_dir": "sites/settings-portal-static",
+    "config": "sites/settings-portal-static/app_config",
+    "routes": "sites/settings-portal-static/routes"
+  }
+}

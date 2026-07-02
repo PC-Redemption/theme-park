@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="green">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Global Preferences</title>
+    <link rel="stylesheet" href="../../../packages/design-system/styles/shell.css">
+    <script defer src="../../../packages/design-system/scripts/shell.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="./index.html"><img class="tp-brand-logo" src="../static/logo.svg" alt="Settings Portal Static logo"><span>Settings Portal Static</span></a>
+        <nav aria-label="Breadcrumb"><span class="tp-muted">Home / Global Preferences</span></nav>
+        <div class="tp-action-bar"><button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button></div>
+      </header>
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar"><strong>Admin Navigation</strong></div>
+          <nav class="tp-nav-links" aria-label="Primary"><a class="" href="./health.html">Health</a><a class="active" href="./settings.html">Settings</a><a class="" href="./users.html">Users</a><a class="" href="./events.html">Events</a></nav>
+        </aside>
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div><p class="tp-kicker">Static starter</p><h1>Global Preferences</h1><p class="tp-subtitle">Defaults and review-before-save configuration workspace.</p></div>
+            <div class="tp-action-bar"><span class="tp-badge">Settings</span></div>
+          </div>
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-card"><strong>Display Defaults</strong><div class="tp-form-grid"><label class="tp-form-field"><span>Time zone</span><select><option>UTC</option><option>America/Los_Angeles</option></select></label><label class="tp-form-field"><span>Date format</span><select><option>YYYY-MM-DD</option><option>MM/DD/YYYY</option></select></label><label class="tp-form-field"><span>Time format</span><select><option>24 hour</option><option>12 hour</option></select></label><label class="tp-form-field"><span>Quality floor</span><input type="number" value="-20"></label></div></section>
+          </div>
+        </main>
+      </div>
+      <footer class="tp-footer"><span>Starter: settings-portal-static</span><span>Page: settings</span></footer>
+    </div>
+  </body>
+</html>

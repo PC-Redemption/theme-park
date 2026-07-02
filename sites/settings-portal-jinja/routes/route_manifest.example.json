@@ -1,0 +1,32 @@
+{
+  "routes": [
+    {
+      "key": "health",
+      "path": "/health",
+      "template": "scaffolds/health_overview.html",
+      "nav_label": "Health",
+      "permission": "view_health"
+    },
+    {
+      "key": "settings",
+      "path": "/settings",
+      "template": "scaffolds/global_preferences.html",
+      "nav_label": "Settings",
+      "permission": "manage_settings"
+    },
+    {
+      "key": "users",
+      "path": "/users",
+      "template": "scaffolds/user_directory.html",
+      "nav_label": "Users",
+      "permission": "manage_users"
+    },
+    {
+      "key": "events",
+      "path": "/events",
+      "template": "scaffolds/event_audit.html",
+      "nav_label": "Events",
+      "permission": "view_events"
+    }
+  ]
+}

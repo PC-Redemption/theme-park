@@ -1,0 +1,8 @@
+{% macro action_button(label, action_label, tone="primary") -%}
+  <button
+    type="button"
+    class="tp-button{{ ' secondary' if tone == 'secondary' else '' }}{{ ' danger' if tone == 'danger' else '' }}"
+    data-tp-action-label="{{ action_label }}"
+    data-tp-action-tone="{{ 'error' if tone == 'danger' else 'success' if tone == 'primary' else 'info' }}"
+  >{{ label }}</button>
+{%- endmacro %}

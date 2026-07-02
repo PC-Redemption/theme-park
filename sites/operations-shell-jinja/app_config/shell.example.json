@@ -1,0 +1,33 @@
+{
+  "branding": {
+    "name": "Operations Shell Jinja",
+    "logo_path": "/site-static/logo.svg",
+    "favicon_path": "/site-static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "blue"
+  },
+  "navigation": {
+    "breadcrumb": [
+      { "label": "Home", "url": "/" },
+      { "label": "Dashboard", "url": "/dashboard" }
+    ],
+    "focused_nav": [
+      { "key": "dashboard", "label": "Dashboard", "url": "/dashboard" },
+      { "key": "records", "label": "Records", "url": "/records" },
+      { "key": "review", "label": "Review", "url": "/review" },
+      { "key": "monitor", "label": "Monitor", "url": "/monitor" },
+      { "key": "references", "label": "References", "url": "/references" },
+      { "key": "results", "label": "Results", "url": "/results" },
+      { "key": "settings", "label": "Settings", "url": "/settings" }
+    ]
+  },
+  "permissions": {
+    "can_review": true,
+    "can_admin": true
+  },
+  "page_frame": {
+    "kicker": "Jinja starter",
+    "title": "Operations Shell Jinja",
+    "subtitle": "Reusable shell proving the shared framework contract."
+  }
+}

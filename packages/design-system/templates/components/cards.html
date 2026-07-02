@@ -1,0 +1,15 @@
+{% macro status_card(label, value, tone="info", note="placeholder") -%}
+  <article class="tp-card {{ tone }}">
+    <span class="tp-muted">{{ label }}</span>
+    <strong>{{ value }}</strong>
+    <span class="tp-muted">{{ note }}</span>
+  </article>
+{%- endmacro %}
+
+{% macro contract_card(title, body, eyebrow="Contract") -%}
+  <article class="tp-card">
+    <span class="tp-muted">{{ eyebrow }}</span>
+    <strong>{{ title }}</strong>
+    <p>{{ body }}</p>
+  </article>
+{%- endmacro %}

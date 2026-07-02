@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="blue">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Operations Shell Starter</title>
+    <link rel="stylesheet" href="../../../packages/design-system/styles/shell.css">
+    <script defer src="../../../packages/design-system/scripts/shell.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="#">
+          <img class="tp-brand-logo" src="../static/logo.svg" alt="Operations Shell logo">
+          <span>Operations Shell</span>
+        </a>
+        <nav aria-label="Breadcrumb">
+          <span class="tp-muted">Home / Dashboard</span>
+        </nav>
+        <div class="tp-action-bar">
+          <button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button>
+          <div data-tp-menu-root style="position: relative;">
+            <button
+              class="tp-button secondary"
+              type="button"
+              data-tp-menu-toggle
+              aria-controls="theme-panel"
+              aria-expanded="false"
+            >
+              Theme
+            </button>
+            <div id="theme-panel" class="tp-menu-panel" data-tp-menu-panel hidden>
+              <p><strong>Mode</strong></p>
+              <div class="tp-action-bar">
+                <button class="tp-button secondary" type="button" data-tp-theme-mode="light" aria-pressed="true">Light</button>
+                <button class="tp-button secondary" type="button" data-tp-theme-mode="dark" aria-pressed="false">Dark</button>
+              </div>
+              <p><strong>Color</strong></p>
+              <div class="tp-action-bar">
+                <button class="tp-button secondary" type="button" data-tp-theme-color="blue" aria-pressed="true">Blue</button>
+                <button class="tp-button secondary" type="button" data-tp-theme-color="green" aria-pressed="false">Green</button>
+                <button class="tp-button secondary" type="button" data-tp-theme-color="plum" aria-pressed="false">Plum</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar">
+            <strong>Navigation</strong>
+          </div>
+          <nav class="tp-nav-links" aria-label="Primary">
+            <a class="active" href="#">Dashboard</a>
+            <a href="#">Review Queue</a>
+            <a href="#">Records</a>
+            <a href="#">Settings</a>
+          </nav>
+        </aside>
+
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div>
+              <p class="tp-kicker">Starter shell</p>
+              <h1>Operations Dashboard</h1>
+              <p class="tp-subtitle">Generic layout shell for dashboards, review queues, settings, and detail workflows.</p>
+            </div>
+            <div class="tp-action-bar">
+              <span class="tp-badge">Reusable</span>
+              <button class="tp-button" type="button" data-tp-action-label="Primary action simulated" data-tp-action-tone="success">Run action</button>
+            </div>
+          </div>
+
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-status-row tp-card-grid">
+              <article class="tp-card info">
+                <span class="tp-muted">Open reviews</span>
+                <strong>12</strong>
+              </article>
+              <article class="tp-card success">
+                <span class="tp-muted">Healthy services</span>
+                <strong>8</strong>
+              </article>
+              <article class="tp-card warning">
+                <span class="tp-muted">Pending approvals</span>
+                <strong>3</strong>
+              </article>
+            </section>
+
+            <section class="tp-card-grid">
+              <article class="tp-card">
+                <span class="tp-muted">Section header</span>
+                <strong>List/detail scaffold</strong>
+                <p class="tp-subtitle">Use this pattern for record browsers, work queues, and searchable admin surfaces.</p>
+              </article>
+              <article class="tp-card">
+                <span class="tp-muted">Workflow scaffold</span>
+                <strong>Review state</strong>
+                <p class="tp-subtitle">Reuse status rows, action bars, and confirmation states for guided workflows.</p>
+              </article>
+            </section>
+
+            <section class="tp-table-shell">
+              <div class="tp-action-bar">
+                <strong>Recent items</strong>
+                <button class="tp-button secondary" type="button">Filter</button>
+              </div>
+              <table class="tp-data-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Owner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sample queue</td>
+                    <td><span class="tp-badge">Ready</span></td>
+                    <td>Ops team</td>
+                  </tr>
+                  <tr>
+                    <td>Review batch</td>
+                    <td><span class="tp-badge">Attention</span></td>
+                    <td>QA team</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section class="tp-card">
+              <strong>Settings form</strong>
+              <div class="tp-form-grid">
+                <label class="tp-form-field">
+                  <span>Brand name</span>
+                  <input type="text" value="Operations Shell">
+                </label>
+                <label class="tp-form-field">
+                  <span>Default route</span>
+                  <select>
+                    <option>Dashboard</option>
+                    <option>Review Queue</option>
+                    <option>Settings</option>
+                  </select>
+                </label>
+              </div>
+            </section>
+
+            <section class="tp-empty-state">
+              <strong>Empty state placeholder</strong>
+              <p class="tp-subtitle">Use this area for no-results, no-selection, and first-run experiences.</p>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <div id="tp-toast-region" class="tp-toast-region" aria-live="polite" aria-atomic="true"></div>
+      <footer class="tp-footer">
+        <span>Starter: operations-shell-jinja</span>
+        <span>Mode: Jinja-first placeholder</span>
+      </footer>
+    </div>
+  </body>
+</html>

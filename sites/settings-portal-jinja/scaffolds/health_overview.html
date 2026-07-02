@@ -1,0 +1,27 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/cards.html" import status_card %}
+{% from "scaffolds/_helpers.html" import admin_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This health page is placeholder-safe starter content with no live service checks connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+  <section class="tp-section-stack">
+    {{ admin_conventions(contract) }}
+    <div class="tp-card-grid">
+      {{ status_card("Status", "Healthy", "success") }}
+      {{ status_card("Checks", "12 sample checks", "info") }}
+      {{ status_card("Attention", "0 open items", "warning") }}
+    </div>
+    <section class="tp-table-shell">
+      <div class="tp-action-bar"><strong>Services</strong><span class="tp-muted">Last check: placeholder</span></div>
+      <table class="tp-data-table">
+        <thead><tr><th>Service</th><th>Status</th><th>Direct</th><th>Front Door</th></tr></thead>
+        <tbody>
+          <tr><td>API Gateway</td><td>healthy</td><td>200</td><td>200</td></tr>
+          <tr><td>Task Runner</td><td>healthy</td><td>200</td><td>200</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{
+  "branding": {
+    "name": "Settings Portal Static",
+    "logo_path": "../static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "green"
+  },
+  "summary": "Framework-neutral starter for health, settings, users, and event reviews.",
+  "sidebar_title": "Admin Navigation",
+  "navigation": [
+    { "key": "health", "label": "Health", "file": "health.html" },
+    { "key": "settings", "label": "Settings", "file": "settings.html" },
+    { "key": "users", "label": "Users", "file": "users.html" },
+    { "key": "events", "label": "Events", "file": "events.html" }
+  ]
+}

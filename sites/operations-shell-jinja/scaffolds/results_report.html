@@ -1,0 +1,35 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/badges.html" import badge %}
+{% from "components/cards.html" import contract_card, status_card %}
+{% from "components/tables.html" import table_empty %}
+{% from "scaffolds/_helpers.html" import scaffold_conventions, reference_links %}
+
+{% block content %}
+  {{ alert("Starter scaffold only", "This results view is placeholder-safe starter content with no completed test data or exports connected.", "warning") }}
+  {{ reference_links(reference_set) }}
+
+  <section class="tp-section-stack" aria-labelledby="results-report-title">
+    <div class="tp-content-head">
+      <div>
+        <p class="tp-kicker">Starter scaffold</p>
+        <h2 id="results-report-title">Results Report</h2>
+      </div>
+      {{ badge("confirmed exports required", "warning") }}
+    </div>
+
+    {{ scaffold_conventions(contract) }}
+
+    <div class="tp-card-grid">
+      {{ status_card("Result State", "Placeholder", "info") }}
+      {{ status_card("Report Source", "Server endpoint", "success") }}
+      {{ status_card("Export State", "Not connected", "warning") }}
+    </div>
+
+    <div class="tp-card-grid">
+      {{ contract_card("Report Summary", "Use for pass/fail, scope, timestamp, and source context.", "Report") }}
+      {{ contract_card("Narrative Notes", "Use for operator notes and review-ready findings.", "Report") }}
+    </div>
+    {{ table_empty("Placeholder results table. Future exports should come from confirmed server state.") }}
+  </section>
+{% endblock %}

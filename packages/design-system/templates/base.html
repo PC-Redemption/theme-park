@@ -1,0 +1,38 @@
+<!doctype html>
+<html
+  lang="en"
+  data-theme-mode="{{ theme.default_mode | default('light') }}"
+  data-theme-color="{{ theme.default_color | default('blue') }}"
+>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title | default(shell.brand.name) }}</title>
+    <script>
+      (function () {
+        var modes = {{ theme.modes | default(["light", "dark"]) | tojson }};
+        var colors = {{ theme.colors | default(["black", "green", "blue", "plum", "orange", "red"]) | tojson }};
+        var defaults = {
+          mode: "{{ theme.default_mode | default('light') }}",
+          color: "{{ theme.default_color | default('blue') }}"
+        };
+        function read(key, fallback, allowed) {
+          try {
+            var value = window.localStorage.getItem(key);
+            return allowed.indexOf(value) >= 0 ? value : fallback;
+          } catch (error) {
+            return fallback;
+          }
+        }
+        document.documentElement.dataset.themeMode = read("theme-park.theme.mode", defaults.mode, modes);
+        document.documentElement.dataset.themeColor = read("theme-park.theme.color", defaults.color, colors);
+      })();
+    </script>
+    <link rel="icon" href="{{ shell.brand.favicon_path | default('/static/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ shell.assets.shell_css | default('/assets/design-system/shell.css') }}">
+    <script defer src="{{ shell.assets.shell_js | default('/assets/design-system/shell.js') }}"></script>
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "routes": [
+    { "key": "queue", "path": "/queue", "template": "scaffolds/queue_overview.html", "nav_label": "Queue", "permission": "view_queue" },
+    { "key": "evidence", "path": "/evidence", "template": "scaffolds/evidence_bundle.html", "nav_label": "Evidence", "permission": "view_evidence" },
+    { "key": "approvals", "path": "/approvals", "template": "scaffolds/approval_board.html", "nav_label": "Approvals", "permission": "approve_items" },
+    { "key": "release", "path": "/release", "template": "scaffolds/release_summary.html", "nav_label": "Release", "permission": "publish_release" }
+  ]
+}

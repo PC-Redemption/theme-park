@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="green">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Audit</title>
+    <link rel="stylesheet" href="../../../packages/design-system/styles/shell.css">
+    <script defer src="../../../packages/design-system/scripts/shell.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="./index.html"><img class="tp-brand-logo" src="../static/logo.svg" alt="Settings Portal Static logo"><span>Settings Portal Static</span></a>
+        <nav aria-label="Breadcrumb"><span class="tp-muted">Home / Event Audit</span></nav>
+        <div class="tp-action-bar"><button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button></div>
+      </header>
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar"><strong>Admin Navigation</strong></div>
+          <nav class="tp-nav-links" aria-label="Primary"><a class="" href="./health.html">Health</a><a class="" href="./settings.html">Settings</a><a class="" href="./users.html">Users</a><a class="active" href="./events.html">Events</a></nav>
+        </aside>
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div><p class="tp-kicker">Static starter</p><h1>Event Audit</h1><p class="tp-subtitle">Filter and review audit-friendly event records.</p></div>
+            <div class="tp-action-bar"><span class="tp-badge">Audit</span></div>
+          </div>
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-card"><strong>Filters</strong><div class="tp-form-grid"><label class="tp-form-field"><span>Source</span><input type="text" value="sample-source"></label><label class="tp-form-field"><span>Collection</span><input type="text" value="demo-collection"></label></div></section><section class="tp-table-shell"><div class="tp-action-bar"><strong>Events</strong><span class="tp-muted">Read-mostly audit view</span></div><table class="tp-data-table"><thead><tr><th>Timestamp</th><th>Event</th><th>Collection</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>2026-07-02T00:00:00Z</td><td>Import Complete / job.complete</td><td>demo-collection</td><td>sample-source</td><td>Placeholder audit note</td></tr><tr><td>2026-07-02T00:15:00Z</td><td>Config Changed / settings.change</td><td>shared</td><td>admin-ui</td><td>Threshold update pending review</td></tr></tbody></table></section>
+          </div>
+        </main>
+      </div>
+      <footer class="tp-footer"><span>Starter: settings-portal-static</span><span>Page: events</span></footer>
+    </div>
+  </body>
+</html>

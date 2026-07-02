@@ -1,0 +1,30 @@
+{
+  "branding": {
+    "name": "Review Studio Jinja",
+    "logo_path": "/site-static/logo.svg",
+    "favicon_path": "/site-static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "plum"
+  },
+  "navigation": {
+    "breadcrumb": [
+      { "label": "Home", "url": "/" },
+      { "label": "Queue", "url": "/queue" }
+    ],
+    "focused_nav": [
+      { "key": "queue", "label": "Queue", "url": "/queue" },
+      { "key": "evidence", "label": "Evidence", "url": "/evidence" },
+      { "key": "approvals", "label": "Approvals", "url": "/approvals" },
+      { "key": "release", "label": "Release", "url": "/release" }
+    ]
+  },
+  "permissions": {
+    "can_review": true,
+    "can_approve": true
+  },
+  "page_frame": {
+    "kicker": "Jinja starter",
+    "title": "Review Studio",
+    "subtitle": "Reusable shell for review, approvals, and release summaries."
+  }
+}

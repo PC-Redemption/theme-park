@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title">
+  <title>Review Studio Static</title>
+  <rect width="640" height="360" rx="28" fill="#0f151b"/>
+  <rect x="24" y="24" width="592" height="312" rx="22" fill="#151d24" stroke="#30404d"/>
+  <rect x="24" y="24" width="592" height="92" rx="22" fill="#6652a6"/>
+  <text x="28" y="62" fill="#ffffff" font-size="14" font-family="Arial, Helvetica, sans-serif">Review / static</text>
+  <text x="28" y="92" fill="#ffffff" font-size="28" font-family="Arial, Helvetica, sans-serif">Review Studio Static</text>
+  <text x="28" y="126" fill="#edf3f7" font-size="16" font-family="Arial, Helvetica, sans-serif">Framework-neutral starter for queues, evidence, approvals, and release summaries.</text>
+  <rect x="28" y="180" width="180" height="124" rx="18" fill="#1d2730" stroke="#30404d"/>
+  <text x="44" y="210" fill="#edf3f7" font-size="16" font-family="Arial, Helvetica, sans-serif">Preview</text>
+  <text x="44" y="236" fill="#b5c4cf" font-size="12" font-family="Arial, Helvetica, sans-serif">STARTER=review-studio-static scripts/preview-static.sh</text>
+  <text x="44" y="258" fill="#b5c4cf" font-size="12" font-family="Arial, Helvetica, sans-serif">http://127.0.0.1:8000/sites/review-studio-static/templates/index.html</text>
+  <rect x="230" y="180" width="356" height="124" rx="18" fill="#1d2730" stroke="#30404d"/>
+  <text x="248" y="210" fill="#edf3f7" font-size="16" font-family="Arial, Helvetica, sans-serif">Strengths</text>
+  <text x="28" y="140" fill="#c8d2dc" font-size="12">review queues</text><text x="28" y="158" fill="#c8d2dc" font-size="12">evidence bundles</text><text x="28" y="176" fill="#c8d2dc" font-size="12">approval boards</text>
+</svg>

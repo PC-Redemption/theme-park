@@ -1,0 +1,17 @@
+{
+  "key": "review-studio-jinja",
+  "name": "Review Studio Jinja",
+  "family": "review",
+  "runtime": "jinja",
+  "summary": "Runtime-backed starter for review queues, evidence bundles, approval boards, and release summaries.",
+  "strengths": ["review queues", "evidence bundles", "approval boards", "release summaries"],
+  "preview": {
+    "script": "STARTER=review-studio-jinja scripts/preview-jinja.sh",
+    "url": "http://127.0.0.1:8000/queue"
+  },
+  "paths": {
+    "site_dir": "sites/review-studio-jinja",
+    "config": "sites/review-studio-jinja/app_config",
+    "routes": "sites/review-studio-jinja/routes"
+  }
+}

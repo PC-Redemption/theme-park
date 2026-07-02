@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "key": "dashboard",
+      "path": "/dashboard",
+      "file": "templates/dashboard.html"
+    },
+    {
+      "key": "records",
+      "path": "/records",
+      "file": "templates/records.html"
+    },
+    {
+      "key": "review",
+      "path": "/review",
+      "file": "templates/review.html"
+    },
+    {
+      "key": "settings",
+      "path": "/settings",
+      "file": "templates/settings.html"
+    }
+  ]
+}

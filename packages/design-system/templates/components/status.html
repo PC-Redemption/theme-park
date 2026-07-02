@@ -1,0 +1,14 @@
+{% macro status_indicator(status, compact=False) -%}
+  <span
+    class="tp-badge {{ status.tone }}{{ ' compact' if compact else '' }}"
+    role="status"
+    aria-label="{{ status.label }}: {{ status.description }}"
+    title="{{ status.label }}: {{ status.description }}"
+  >
+    {{ status.label }}
+  </span>
+{%- endmacro %}
+
+{% macro live_indicator(state="placeholder") -%}
+  <span class="tp-badge">{{ state }}</span>
+{%- endmacro %}

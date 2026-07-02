@@ -1,0 +1,16 @@
+{
+  "branding": {
+    "name": "Review Studio Static",
+    "logo_path": "../static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "plum"
+  },
+  "summary": "Framework-neutral starter for review queues, evidence bundles, approval boards, and release summaries.",
+  "sidebar_title": "Review Navigation",
+  "navigation": [
+    { "key": "queue", "label": "Queue", "file": "queue.html" },
+    { "key": "evidence", "label": "Evidence", "file": "evidence.html" },
+    { "key": "approvals", "label": "Approvals", "file": "approvals.html" },
+    { "key": "release", "label": "Release", "file": "release.html" }
+  ]
+}

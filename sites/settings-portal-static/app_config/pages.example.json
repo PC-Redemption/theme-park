@@ -1,0 +1,120 @@
+{
+  "pages": [
+    {
+      "key": "health",
+      "label": "Health",
+      "file": "health.html",
+      "kicker": "Static starter",
+      "title": "Foundation Health",
+      "subtitle": "Service, dependency, and status overview.",
+      "badges": ["Health"],
+      "card_title": "Foundation overview",
+      "card_body": "Service and dependency checks.",
+      "sections": [
+        {
+          "type": "status_cards",
+          "items": [
+            { "label": "Status", "value": "Healthy", "tone": "success" },
+            { "label": "Checks", "value": "12 sample checks", "tone": "info" },
+            { "label": "Attention", "value": "0 open items", "tone": "warning" }
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Services",
+          "meta": "Last check: placeholder",
+          "headers": ["Service", "Status", "Direct", "Front Door"],
+          "rows": [
+            ["API Gateway", "healthy", "200", "200"],
+            ["Scheduler", "healthy", "200", "200"]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "settings",
+      "label": "Settings",
+      "file": "settings.html",
+      "kicker": "Static starter",
+      "title": "Global Preferences",
+      "subtitle": "Defaults and review-before-save configuration workspace.",
+      "badges": ["Settings"],
+      "card_title": "Global preferences",
+      "card_body": "Defaults, review, and save workflows.",
+      "sections": [
+        {
+          "type": "form",
+          "title": "Display Defaults",
+          "fields": [
+            { "label": "Time zone", "type": "select", "options": ["UTC", "America/Los_Angeles"] },
+            { "label": "Date format", "type": "select", "options": ["YYYY-MM-DD", "MM/DD/YYYY"] },
+            { "label": "Time format", "type": "select", "options": ["24 hour", "12 hour"] },
+            { "label": "Quality floor", "type": "number", "value": "-20" }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "users",
+      "label": "Users",
+      "file": "users.html",
+      "kicker": "Static starter",
+      "title": "User Directory",
+      "subtitle": "Accounts, roles, and administration surfaces.",
+      "badges": ["Users"],
+      "card_title": "Directory",
+      "card_body": "Accounts, roles, and actions.",
+      "sections": [
+        {
+          "type": "status_cards",
+          "items": [
+            { "label": "Signed In", "value": "Admin User", "tone": "info" },
+            { "label": "Role", "value": "Administrator", "tone": "success" },
+            { "label": "Users", "value": "8 sample users", "tone": "warning" }
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Users",
+          "meta": "Admin only",
+          "headers": ["User", "Contact", "Roles", "Status"],
+          "rows": [
+            ["Avery Admin / aadmin", "avery@example.test", "admin, reviewer", "active"],
+            ["Robin Reviewer / rreview", "robin@example.test", "reviewer", "active"]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "events",
+      "label": "Events",
+      "file": "events.html",
+      "kicker": "Static starter",
+      "title": "Event Audit",
+      "subtitle": "Filter and review audit-friendly event records.",
+      "badges": ["Audit"],
+      "card_title": "Audit log",
+      "card_body": "Filters and audit-friendly tables.",
+      "sections": [
+        {
+          "type": "form",
+          "title": "Filters",
+          "fields": [
+            { "label": "Source", "type": "text", "value": "sample-source" },
+            { "label": "Collection", "type": "text", "value": "demo-collection" }
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Events",
+          "meta": "Read-mostly audit view",
+          "headers": ["Timestamp", "Event", "Collection", "Source", "Notes"],
+          "rows": [
+            ["2026-07-02T00:00:00Z", "Import Complete / job.complete", "demo-collection", "sample-source", "Placeholder audit note"],
+            ["2026-07-02T00:15:00Z", "Config Changed / settings.change", "shared", "admin-ui", "Threshold update pending review"]
+          ]
+        }
+      ]
+    }
+  ]
+}

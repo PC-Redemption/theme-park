@@ -1,0 +1,8 @@
+{
+  "pages": [
+    { "key": "health", "path": "/health", "file": "templates/health.html" },
+    { "key": "settings", "path": "/settings", "file": "templates/settings.html" },
+    { "key": "users", "path": "/users", "file": "templates/users.html" },
+    { "key": "events", "path": "/events", "file": "templates/events.html" }
+  ]
+}

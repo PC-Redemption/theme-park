@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="plum">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Review Queue</title>
+    <link rel="stylesheet" href="../../../packages/design-system/styles/shell.css">
+    <script defer src="../../../packages/design-system/scripts/shell.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="./index.html"><img class="tp-brand-logo" src="../static/logo.svg" alt="Review Studio Static logo"><span>Review Studio Static</span></a>
+        <nav aria-label="Breadcrumb"><span class="tp-muted">Home / Review Queue</span></nav>
+        <div class="tp-action-bar"><button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button></div>
+      </header>
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar"><strong>Review Navigation</strong></div>
+          <nav class="tp-nav-links" aria-label="Primary"><a class="active" href="./queue.html">Queue</a><a class="" href="./evidence.html">Evidence</a><a class="" href="./approvals.html">Approvals</a><a class="" href="./release.html">Release</a></nav>
+        </aside>
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div><p class="tp-kicker">Static starter</p><h1>Review Queue</h1><p class="tp-subtitle">Queue-first triage and review layout.</p></div>
+            <div class="tp-action-bar"><span class="tp-badge">Review</span></div>
+          </div>
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-card-grid"><article class="tp-card info"><span class="tp-muted">Ready</span><strong>18 items</strong></article><article class="tp-card warning"><span class="tp-muted">Blocked</span><strong>2 items</strong></article><article class="tp-card success"><span class="tp-muted">Assigned</span><strong>5 reviewers</strong></article></section>
+          </div>
+        </main>
+      </div>
+      <footer class="tp-footer"><span>Starter: review-studio-static</span><span>Page: queue</span></footer>
+    </div>
+  </body>
+</html>

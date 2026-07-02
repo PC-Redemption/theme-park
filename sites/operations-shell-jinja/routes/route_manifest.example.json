@@ -1,0 +1,53 @@
+{
+  "routes": [
+    {
+      "key": "dashboard",
+      "path": "/dashboard",
+      "template": "scaffolds/dashboard_overview.html",
+      "nav_label": "Dashboard",
+      "permission": "view_dashboard"
+    },
+    {
+      "key": "records",
+      "path": "/records",
+      "template": "scaffolds/list_detail.html",
+      "nav_label": "Records",
+      "permission": "view_records"
+    },
+    {
+      "key": "review",
+      "path": "/review",
+      "template": "scaffolds/workflow_review.html",
+      "nav_label": "Review",
+      "permission": "review_items"
+    },
+    {
+      "key": "monitor",
+      "path": "/monitor",
+      "template": "scaffolds/live_monitor.html",
+      "nav_label": "Monitor",
+      "permission": "view_monitor"
+    },
+    {
+      "key": "references",
+      "path": "/references",
+      "template": "scaffolds/reference_library.html",
+      "nav_label": "References",
+      "permission": "view_references"
+    },
+    {
+      "key": "results",
+      "path": "/results",
+      "template": "scaffolds/results_report.html",
+      "nav_label": "Results",
+      "permission": "view_results"
+    },
+    {
+      "key": "settings",
+      "path": "/settings",
+      "template": "scaffolds/settings_workspace.html",
+      "nav_label": "Settings",
+      "permission": "manage_settings"
+    }
+  ]
+}

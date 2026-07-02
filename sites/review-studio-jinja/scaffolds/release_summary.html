@@ -1,0 +1,20 @@
+{% extends "shell.html" %}
+{% from "components/alerts.html" import alert %}
+{% from "components/cards.html" import contract_card, status_card %}
+{% from "scaffolds/_helpers.html" import review_conventions, reference_links %}
+{% block content %}
+{{ alert("Starter scaffold only", "This release summary is placeholder-safe starter content with no real publish path connected.", "warning") }}
+{{ reference_links(reference_set) }}
+<section class="tp-section-stack">
+  {{ review_conventions(contract) }}
+  <div class="tp-card-grid">
+    {{ status_card("Draft", "In progress", "info") }}
+    {{ status_card("Ready", "Review complete", "success") }}
+    {{ status_card("Export", "Pending final action", "warning") }}
+  </div>
+  <div class="tp-card-grid">
+    {{ contract_card("Release Notes", "Use for outcome summaries and reviewer narrative.", "Summary") }}
+    {{ contract_card("Evidence Links", "Use for supporting proof and signoff references.", "Evidence") }}
+  </div>
+</section>
+{% endblock %}

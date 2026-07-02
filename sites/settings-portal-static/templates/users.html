@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light" data-theme-color="green">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Directory</title>
+    <link rel="stylesheet" href="../../../packages/design-system/styles/shell.css">
+    <script defer src="../../../packages/design-system/scripts/shell.js"></script>
+  </head>
+  <body>
+    <div class="tp-shell" data-tp-shell>
+      <header class="tp-topbar">
+        <a class="tp-brand" href="./index.html"><img class="tp-brand-logo" src="../static/logo.svg" alt="Settings Portal Static logo"><span>Settings Portal Static</span></a>
+        <nav aria-label="Breadcrumb"><span class="tp-muted">Home / User Directory</span></nav>
+        <div class="tp-action-bar"><button class="tp-button secondary" type="button" data-tp-nav-toggle aria-expanded="true">Toggle nav</button></div>
+      </header>
+      <div class="tp-shell-grid">
+        <aside class="tp-sidebar">
+          <div class="tp-sidebar-toolbar"><strong>Admin Navigation</strong></div>
+          <nav class="tp-nav-links" aria-label="Primary"><a class="" href="./health.html">Health</a><a class="" href="./settings.html">Settings</a><a class="active" href="./users.html">Users</a><a class="" href="./events.html">Events</a></nav>
+        </aside>
+        <main class="tp-main">
+          <div class="tp-content-head">
+            <div><p class="tp-kicker">Static starter</p><h1>User Directory</h1><p class="tp-subtitle">Accounts, roles, and administration surfaces.</p></div>
+            <div class="tp-action-bar"><span class="tp-badge">Users</span></div>
+          </div>
+          <div class="tp-content-body tp-section-stack">
+            <section class="tp-card-grid"><article class="tp-card info"><span class="tp-muted">Signed In</span><strong>Admin User</strong></article><article class="tp-card success"><span class="tp-muted">Role</span><strong>Administrator</strong></article><article class="tp-card warning"><span class="tp-muted">Users</span><strong>8 sample users</strong></article></section><section class="tp-table-shell"><div class="tp-action-bar"><strong>Users</strong><span class="tp-muted">Admin only</span></div><table class="tp-data-table"><thead><tr><th>User</th><th>Contact</th><th>Roles</th><th>Status</th></tr></thead><tbody><tr><td>Avery Admin / aadmin</td><td>avery@example.test</td><td>admin, reviewer</td><td>active</td></tr><tr><td>Robin Reviewer / rreview</td><td>robin@example.test</td><td>reviewer</td><td>active</td></tr></tbody></table></section>
+          </div>
+        </main>
+      </div>
+      <footer class="tp-footer"><span>Starter: settings-portal-static</span><span>Page: users</span></footer>
+    </div>
+  </body>
+</html>

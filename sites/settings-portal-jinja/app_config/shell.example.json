@@ -1,0 +1,30 @@
+{
+  "branding": {
+    "name": "Settings Portal Jinja",
+    "logo_path": "/site-static/logo.svg",
+    "favicon_path": "/site-static/logo.svg",
+    "default_theme_mode": "light",
+    "default_theme_color": "green"
+  },
+  "navigation": {
+    "breadcrumb": [
+      { "label": "Home", "url": "/" },
+      { "label": "Health", "url": "/health" }
+    ],
+    "focused_nav": [
+      { "key": "health", "label": "Health", "url": "/health" },
+      { "key": "settings", "label": "Settings", "url": "/settings" },
+      { "key": "users", "label": "Users", "url": "/users" },
+      { "key": "events", "label": "Events", "url": "/events" }
+    ]
+  },
+  "permissions": {
+    "can_admin": true,
+    "can_audit": true
+  },
+  "page_frame": {
+    "kicker": "Jinja starter",
+    "title": "Settings Portal",
+    "subtitle": "Reusable shell for admin and configuration workflows."
+  }
+}
